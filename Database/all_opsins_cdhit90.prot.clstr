@@ -1,0 +1,699 @@
+>Cluster 0
+0	697aa, >opn4x-Anguilla_angu... *
+>Cluster 1
+0	615aa, >opn4x-Gadus_morhua-... *
+>Cluster 2
+0	592aa, >opn4m1_3-Zebrafish-... *
+>Cluster 3
+0	577aa, >opn4m1_3-Gadus_morh... *
+>Cluster 4
+0	573aa, >opn4m1_3-Lepisosteu... *
+>Cluster 5
+0	570aa, >opn4m1_3-Gasteroste... *
+>Cluster 6
+0	569aa, >opn4m1_3-Anguilla_a... *
+>Cluster 7
+0	568aa, >opn4m1_3-Oreochromi... *
+>Cluster 8
+0	566aa, >opn4m1_3-Anguilla_a... *
+>Cluster 9
+0	565aa, >opn4m1_3-Zebrafish-... *
+>Cluster 10
+0	563aa, >opn4m1_3-Hippocampu... *
+1	563aa, >opn4m1_3-Hippocampu... at 99.29%
+>Cluster 11
+0	562aa, >opn4m1_3-Sebastes_u... *
+>Cluster 12
+0	561aa, >opn4x-Gadus_morhua-... *
+>Cluster 13
+0	560aa, >opn4m1_3-Poecilia_r... *
+>Cluster 14
+0	559aa, >opn4x-Hippocampus_z... *
+>Cluster 15
+0	557aa, >opn4m1_3-Oreochromi... *
+>Cluster 16
+0	557aa, >opn4x-Oreochromis_n... *
+>Cluster 17
+0	556aa, >opn4x-Poecilia_reti... *
+>Cluster 18
+0	551aa, >opn4x-Sebastes_umbr... *
+>Cluster 19
+0	550aa, >opn4x-Gasterosteus_... *
+>Cluster 20
+0	550aa, >opn4x-Takifugu_rubr... *
+>Cluster 21
+0	548aa, >opn4m1_3-Takifugu_r... *
+>Cluster 22
+0	548aa, >opn6-Oreochromis_ni... *
+1	410aa, >opn6-Maylandia_zebr... at 99.02%
+2	410aa, >Neolamprologus_bric... at 98.05%
+>Cluster 23
+0	547aa, >opn4x-Gasterosteus_... *
+>Cluster 24
+0	542aa, >Amphiprion_clarkii-... *
+>Cluster 25
+0	537aa, >opn4x-Anguilla_angu... *
+>Cluster 26
+0	531aa, >opn4x-Zebrafish-opn... *
+>Cluster 27
+0	530aa, >opn4m1_3-Gasteroste... *
+1	530aa, >Gasterosteus_nippon... at 98.68%
+>Cluster 28
+0	529aa, >Toxotes_jaculatrix-... *
+>Cluster 29
+0	525aa, >opn4m1_3-Hippocampu... *
+>Cluster 30
+0	521aa, >opn9-Zebrafish-opn9... *
+>Cluster 31
+0	520aa, >opn4x-Lepisosteus_o... *
+>Cluster 32
+0	515aa, >opn4m1_3-Gadus_morh... *
+>Cluster 33
+0	515aa, >opn4m1_3-Takifugu_r... *
+>Cluster 34
+0	514aa, >Helostoma_temminkii... *
+>Cluster 35
+0	513aa, >opn8c-Gadus_morhua-... *
+>Cluster 36
+0	512aa, >opn9-Sebastes_umbro... *
+>Cluster 37
+0	505aa, >opn4x-Sebastes_umbr... *
+>Cluster 38
+0	500aa, >opn4m2-Zebrafish-op... *
+>Cluster 39
+0	498aa, >opn4m2-Anguilla_ang... *
+>Cluster 40
+0	495aa, >opn9-Gadus_morhua--... *
+>Cluster 41
+0	494aa, >opn7a-Gadus_morhua-... *
+>Cluster 42
+0	491aa, >opn9-Perca_flavesce... *
+>Cluster 43
+0	488aa, >opn4m1_3-Poecilia_r... *
+>Cluster 44
+0	486aa, >opn9-Takifugu_rubri... *
+1	486aa, >opn9-Takifugu_rubri... at 99.59%
+>Cluster 45
+0	471aa, >Ictalurus_furcatus-... *
+>Cluster 46
+0	470aa, >opn4m2-Oreochromis_... *
+>Cluster 47
+0	469aa, >opn9-Gasterosteus_a... *
+>Cluster 48
+0	468aa, >opn7a-Gadus_morhua-... *
+>Cluster 49
+0	463aa, >opn4m2-Takifugu_rub... *
+>Cluster 50
+0	460aa, >opn4x-Zebrafish-opn... *
+>Cluster 51
+0	458aa, >Heterotis_niloticus... *
+>Cluster 52
+0	455aa, >opn7a-Zebrafish-opn... *
+>Cluster 53
+0	451aa, >opn7a-Oreochromis_n... *
+>Cluster 54
+0	450aa, >opn7a-Sebastes_umbr... *
+>Cluster 55
+0	447aa, >opn7a-Poecilia_reti... *
+>Cluster 56
+0	444aa, >Nothobranchius_kuhn... *
+>Cluster 57
+0	443aa, >opn7a-Lepisosteus_o... *
+>Cluster 58
+0	442aa, >opn8c-Sebastes_umbr... *
+>Cluster 59
+0	441aa, >Colossoma_macropomu... *
+>Cluster 60
+0	441aa, >opn6-Maylandia_zebr... *
+>Cluster 61
+0	441aa, >opn7a-Anguilla_angu... *
+>Cluster 62
+0	441aa, >opn7a-Gasterosteus_... *
+>Cluster 63
+0	436aa, >opn7a-Takifugu_rubr... *
+>Cluster 64
+0	436aa, >opn8c-Lepisosteus_o... *
+>Cluster 65
+0	436aa, >tmt3-Sebastes_umbro... *
+>Cluster 66
+0	434aa, >opn4x-Poecilia_reti... *
+>Cluster 67
+0	432aa, >tmt3-Oreochromis_ni... *
+>Cluster 68
+0	427aa, >va-Polypterus_seneg... *
+>Cluster 69
+0	426aa, >opn7b-Gasterosteus_... *
+>Cluster 70
+0	424aa, >opn3-Sebastes_umbro... *
+>Cluster 71
+0	423aa, >opn7a-Hippocampus_z... *
+>Cluster 72
+0	421aa, >opn6-Takifugu_rubri... *
+>Cluster 73
+0	421aa, >opn7b-Gadus_morhua-... *
+>Cluster 74
+0	420aa, >opn4x-Oreochromis_n... *
+>Cluster 75
+0	419aa, >opn6-Zebrafish-opn6... *
+>Cluster 76
+0	417aa, >opn8c-Hippocampus_z... *
+>Cluster 77
+0	416aa, >opn6-Gadus_morhua--... *
+>Cluster 78
+0	415aa, >opn6-Anguilla_angui... *
+>Cluster 79
+0	414aa, >opn6-Poecilia_retic... *
+>Cluster 80
+0	414aa, >opn6-Oreochromis_ni... *
+>Cluster 81
+0	414aa, >opn6-Hippocampus_zo... *
+>Cluster 82
+0	414aa, >opn6-Betta_splenden... *
+>Cluster 83
+0	410aa, >opn6-Sebastes_umbro... at 91.22%
+1	414aa, >Dascyllus_trimacula... *
+2	414aa, >Terapon_puta---opn6... at 92.03%
+>Cluster 84
+0	414aa, >tmt3-Gasterosteus_a... *
+>Cluster 85
+0	413aa, >opn7b-Poecilia_reti... *
+>Cluster 86
+0	413aa, >opn7b-Oreochromis_n... *
+>Cluster 87
+0	413aa, >tmt3-Oreochromis_ni... *
+>Cluster 88
+0	412aa, >opn4x-Takifugu_rubr... *
+>Cluster 89
+0	411aa, >Periophthalmus_mode... *
+>Cluster 90
+0	410aa, >opn6-Poecilia_retic... *
+>Cluster 91
+0	410aa, >opn8c-Oreochromis_n... *
+>Cluster 92
+0	410aa, >tmt3-Sebastes_umbro... *
+>Cluster 93
+0	409aa, >opn6-Gasterosteus_a... *
+>Cluster 94
+0	409aa, >opn6-Anguilla_angui... *
+>Cluster 95
+0	409aa, >opn6-Gasterosteus_a... *
+>Cluster 96
+0	380aa, >tmt1-Sebastes_umbro... at 92.11%
+1	409aa, >tmt1-Gasterosteus_a... *
+>Cluster 97
+0	408aa, >opn6-Takifugu_rubri... *
+>Cluster 98
+0	408aa, >opn7b-Lepisosteus_o... *
+>Cluster 99
+0	407aa, >opn7b-Oreochromis_n... *
+>Cluster 100
+0	407aa, >opn8c-Takifugu_rubr... *
+>Cluster 101
+0	406aa, >tmt3-Hippocampus_zo... *
+>Cluster 102
+0	406aa, >tmt3-Gasterosteus_a... *
+>Cluster 103
+0	406aa, >tmt3-Takifugu_rubri... *
+>Cluster 104
+0	404aa, >opn7b-Zebrafish-opn... *
+>Cluster 105
+0	404aa, >Cyprinus_carpio_car... *
+>Cluster 106
+0	404aa, >opn9-Polypterus_sen... *
+>Cluster 107
+0	404aa, >va-Anguilla_anguill... *
+>Cluster 108
+0	403aa, >opn7b-Zebrafish-opn... *
+>Cluster 109
+0	403aa, >tmt3-Hippocampus_zo... *
+>Cluster 110
+0	402aa, >opn6-Polypterus_sen... *
+>Cluster 111
+0	402aa, >opn6-Lepisosteus_oc... *
+>Cluster 112
+0	402aa, >opn6-Gadus_morhua--... *
+>Cluster 113
+0	402aa, >tmt3-Takifugu_rubri... *
+>Cluster 114
+0	402aa, >tmt3-Anguilla_angui... *
+>Cluster 115
+0	400aa, >opn8c-Anguilla_angu... *
+>Cluster 116
+0	400aa, >opn8c-Gasterosteus_... *
+>Cluster 117
+0	400aa, >tmt1-Gadus_morhua--... *
+>Cluster 118
+0	399aa, >opn7b-Hippocampus_z... *
+>Cluster 119
+0	399aa, >opn7b-Takifugu_rubr... *
+>Cluster 120
+0	399aa, >opn7b-Sebastes_umbr... *
+>Cluster 121
+0	399aa, >opn7b-Sebastes_umbr... *
+>Cluster 122
+0	399aa, >opn9-Lepisosteus_oc... *
+>Cluster 123
+0	399aa, >tmt2-Anguilla_angui... *
+>Cluster 124
+0	398aa, >opn7b-Gadus_morhua-... *
+>Cluster 125
+0	398aa, >opn7b-Zebrafish-opn... *
+>Cluster 126
+0	398aa, >opn7b-Anguilla_angu... *
+>Cluster 127
+0	398aa, >opn7b-Takifugu_rubr... *
+>Cluster 128
+0	398aa, >opn8c-Zebrafish-opn... *
+>Cluster 129
+0	398aa, >tmt3-Gadus_morhua--... *
+>Cluster 130
+0	397aa, >opn4x-Hippocampus_z... *
+>Cluster 131
+0	397aa, >opn7b-Poecilia_reti... *
+>Cluster 132
+0	397aa, >tmt3-Zebrafish-tmt3... *
+>Cluster 133
+0	396aa, >opn7b-Polypterus_se... *
+>Cluster 134
+0	396aa, >tmt3-Lepisosteus_oc... *
+>Cluster 135
+0	396aa, >tmt3-Poecilia_retic... *
+>Cluster 136
+0	396aa, >va-Anguilla_anguill... *
+>Cluster 137
+0	395aa, >tmt2-Gadus_morhua--... *
+>Cluster 138
+0	395aa, >tmt3-Anguilla_angui... *
+>Cluster 139
+0	394aa, >tmt1-Oreochromis_ni... *
+>Cluster 140
+0	394aa, >tmt3-Lepisosteus_oc... *
+>Cluster 141
+0	393aa, >tmt2-Anguilla_angui... *
+>Cluster 142
+0	392aa, >va-Zebrafish-va2... *
+>Cluster 143
+0	391aa, >opn6-Zebrafish-opn6... *
+>Cluster 144
+0	391aa, >va-Gadus_morhua---r... *
+>Cluster 145
+0	390aa, >tmt3-Polypterus_sen... *
+>Cluster 146
+0	390aa, >va-Oreochromis_nilo... *
+1	387aa, >va-Sebastes_umbrosu... at 91.47%
+2	387aa, >va-Poecilia_reticul... at 92.25%
+>Cluster 147
+0	389aa, >opn3-Polypterus_sen... *
+>Cluster 148
+0	389aa, >opn3-Gadus_morhua--... *
+>Cluster 149
+0	389aa, >opn3-Poecilia_retic... *
+>Cluster 150
+0	389aa, >tmt2-Poecilia_retic... *
+>Cluster 151
+0	389aa, >va-Lepisosteus_ocul... *
+>Cluster 152
+0	388aa, >opn3-Gasterosteus_a... *
+>Cluster 153
+0	388aa, >opn3-Oreochromis_ni... *
+>Cluster 154
+0	388aa, >tmt2-Takifugu_rubri... *
+>Cluster 155
+0	387aa, >opn3-Zebrafish-opn3... *
+>Cluster 156
+0	387aa, >opn3-Takifugu_rubri... *
+>Cluster 157
+0	387aa, >tmt2-Hippocampus_zo... *
+>Cluster 158
+0	387aa, >tmt3-Zebrafish-tmt3... *
+>Cluster 159
+0	387aa, >va-Takifugu_rubripe... *
+>Cluster 160
+0	386aa, >opn7a-Anguilla_angu... *
+>Cluster 161
+0	386aa, >tmt2-Oreochromis_ni... *
+>Cluster 162
+0	385aa, >opn3-Lepisosteus_oc... *
+>Cluster 163
+0	385aa, >opn3-Anguilla_angui... *
+>Cluster 164
+0	385aa, >opn3-Hippocampus_zo... *
+>Cluster 165
+0	385aa, >tmt2-Poecilia_retic... *
+>Cluster 166
+0	385aa, >va-Electrophorus_el... *
+>Cluster 167
+0	384aa, >va-Hippocampus_zost... *
+>Cluster 168
+0	384aa, >va-Gasterosteus_acu... *
+>Cluster 169
+0	383aa, >opn6-Polypterus_sen... *
+>Cluster 170
+0	383aa, >tmt1-Takifugu_rubri... *
+>Cluster 171
+0	383aa, >tmt1-Hippocampus_zo... *
+>Cluster 172
+0	381aa, >tmt1-Lepisosteus_oc... *
+>Cluster 173
+0	381aa, >tmt1-Zebrafish-tmt1... *
+>Cluster 174
+0	381aa, >tmt2-Sebastes_umbro... *
+>Cluster 175
+0	380aa, >opn8b-Anguilla_angu... *
+>Cluster 176
+0	359aa, >tmt1-Poecilia_retic... at 90.25%
+1	380aa, >tmt1-Oreochromis_ni... *
+>Cluster 177
+0	380aa, >tmt2-Sebastes_umbro... *
+>Cluster 178
+0	379aa, >tmt2-Zebrafish-tmt2... *
+>Cluster 179
+0	378aa, >tmt2-Gasterosteus_a... *
+>Cluster 180
+0	377aa, >tmt1-Gadus_morhua--... *
+1	377aa, >tmt1-Gadus_morhua--... at 99.73%
+>Cluster 181
+0	377aa, >va-Zebrafish-va1... *
+>Cluster 182
+0	375aa, >parietopsin-Gadus_m... *
+>Cluster 183
+0	374aa, >parietopsin-Takifug... *
+>Cluster 184
+0	374aa, >tmt1-Anguilla_angui... *
+>Cluster 185
+0	372aa, >opn5-Lepisosteus_oc... *
+>Cluster 186
+0	370aa, >tmt1-Zebrafish-tmt1... *
+>Cluster 187
+0	367aa, >opn6-Lepisosteus_oc... *
+>Cluster 188
+0	367aa, >opn8b-Hippocampus_z... *
+>Cluster 189
+0	365aa, >lws-Polypterus_sene... *
+>Cluster 190
+0	364aa, >lws-Lepisosteus_ocu... *
+>Cluster 191
+0	364aa, >opn8b-Oreochromis_n... *
+>Cluster 192
+0	363aa, >opn5-Anguilla_angui... *
+>Cluster 193
+0	363aa, >opn5-Takifugu_rubri... *
+>Cluster 194
+0	363aa, >tmt2-Oreochromis_ni... *
+>Cluster 195
+0	362aa, >sws2-Polypterus_sen... *
+>Cluster 196
+0	362aa, >sws2-Lepisosteus_oc... *
+>Cluster 197
+0	361aa, >opn8a-Sebastes_umbr... *
+>Cluster 198
+0	361aa, >rh1_exorh-Lepisoste... *
+>Cluster 199
+0	360aa, >parietopsin-Gastero... *
+>Cluster 200
+0	360aa, >rh1_exorh-Anguilla_... *
+>Cluster 201
+0	359aa, >opn8a-Gasterosteus_... *
+>Cluster 202
+0	359aa, >pinopsin-Lepisosteu... *
+>Cluster 203
+0	359aa, >sws2-Anguilla_angui... *
+>Cluster 204
+0	358aa, >opn8a-Takifugu_rubr... *
+>Cluster 205
+0	357aa, >lws-Sebastes_umbros... *
+1	357aa, >lws-Gasterosteus_ac... at 91.88%
+2	357aa, >lws-Takifugu_rubrip... at 91.88%
+>Cluster 206
+0	357aa, >lws-Poecilia_reticu... *
+>Cluster 207
+0	357aa, >lws-Poecilia_reticu... *
+>Cluster 208
+0	356aa, >lws-Poecilia_reticu... at 94.66%
+1	356aa, >lws-Poecilia_reticu... at 94.38%
+2	357aa, >lws-Oreochromis_nil... *
+3	356aa, >lws-Hippocampus_zos... at 91.57%
+>Cluster 209
+0	357aa, >lws-Zebrafish-lws1... *
+1	356aa, >lws-Zebrafish-lws2... at 93.26%
+>Cluster 210
+0	357aa, >Albula_glossodonta-... *
+>Cluster 211
+0	357aa, >opn8b-Zebrafish-opn... *
+>Cluster 212
+0	357aa, >parietopsin-Poecili... *
+>Cluster 213
+0	357aa, >tmt2-Zebrafish-tmt2... *
+>Cluster 214
+0	356aa, >opn5-Hippocampus_zo... *
+>Cluster 215
+0	347aa, >rh2-Gadus_morhua---... at 94.24%
+1	349aa, >rh2-Gadus_morhua---... at 99.14%
+2	356aa, >rh2-Gadus_morhua---... *
+>Cluster 216
+0	355aa, >opn5-Polypterus_sen... *
+>Cluster 217
+0	355aa, >opn8b-Polypterus_se... *
+>Cluster 218
+0	355aa, >rh1_exorh-Hippocamp... *
+1	355aa, >rh1_exorh-Hippocamp... at 99.72%
+>Cluster 219
+0	355aa, >rh1_exorh-Zebrafish... *
+>Cluster 220
+0	355aa, >rh2-Polypterus_sene... *
+1	355aa, >rh2-Lepisosteus_ocu... at 92.11%
+>Cluster 221
+0	353aa, >opn5-Gasterosteus_a... at 91.50%
+1	354aa, >opn5-Sebastes_umbro... *
+2	353aa, >opn5-Oreochromis_ni... at 90.65%
+>Cluster 222
+0	354aa, >parapinopsin-Gadus_... *
+>Cluster 223
+0	354aa, >rh1_exorh-Polypteru... *
+>Cluster 224
+0	354aa, >rh1_exorh-Zebrafish... *
+>Cluster 225
+0	354aa, >rh1_exorh-Gasterost... *
+>Cluster 226
+0	354aa, >rh1_exorh-Lepisoste... *
+>Cluster 227
+0	354aa, >rh1_exorh-Zebrafish... *
+>Cluster 228
+0	354aa, >rh1_exorh-Poecilia_... *
+1	354aa, >rh1_exorh-Oreochrom... at 93.79%
+2	353aa, >rh1_exorh-Takifugu_... at 91.22%
+3	354aa, >rh1_exorh-Hippocamp... at 90.96%
+>Cluster 229
+0	354aa, >sws2-Zebrafish-sws2... *
+>Cluster 230
+0	354aa, >sws2-Poecilia_retic... *
+>Cluster 231
+0	353aa, >opn5-Gadus_morhua--... *
+>Cluster 232
+0	353aa, >rh1_exorh-Poecilia_... *
+1	351aa, >rh1_exorh-Oreochrom... at 93.45%
+2	353aa, >rh1_exorh-Takifugu_... at 91.50%
+3	353aa, >rh1_exorh-Sebastes_... at 92.92%
+>Cluster 233
+0	353aa, >sws2-Takifugu_rubri... *
+>Cluster 234
+0	352aa, >opn5-Zebrafish-opn5... *
+>Cluster 235
+0	352aa, >opn5-Poecilia_retic... *
+>Cluster 236
+0	352aa, >opn8b-Lepisosteus_o... *
+>Cluster 237
+0	352aa, >opn8b-Gadus_morhua-... *
+>Cluster 238
+0	352aa, >rh1_exorh-Gadus_mor... *
+>Cluster 239
+0	352aa, >rh1_exorh-Anguilla_... *
+>Cluster 240
+0	352aa, >rh1_exorh-Sebastes_... *
+>Cluster 241
+0	352aa, >rh2-Oreochromis_nil... *
+>Cluster 242
+0	352aa, >rh2-Takifugu_rubrip... *
+1	352aa, >rh2-Gasterosteus_ac... at 90.62%
+2	352aa, >rh2-Sebastes_umbros... at 90.06%
+3	352aa, >rh2-Sebastes_umbros... at 90.06%
+>Cluster 243
+0	352aa, >rh2-Hippocampus_zos... *
+1	352aa, >rh2-Poecilia_reticu... at 90.91%
+2	352aa, >rh2-Oreochromis_nil... at 91.76%
+3	352aa, >rh2-Oreochromis_nil... at 90.34%
+>Cluster 244
+0	352aa, >sws2-Sebastes_umbro... *
+>Cluster 245
+0	352aa, >sws2-Gadus_morhua--... *
+>Cluster 246
+0	352aa, >sws2-Hippocampus_zo... *
+>Cluster 247
+0	351aa, >rh1_exorh-Gadus_mor... *
+>Cluster 248
+0	351aa, >sws2-Oreochromis_ni... *
+>Cluster 249
+0	351aa, >sws2-Gadus_morhua--... *
+>Cluster 250
+0	351aa, >sws2-Sebastes_umbro... *
+>Cluster 251
+0	351aa, >sws2-Gasterosteus_a... *
+>Cluster 252
+0	351aa, >sws2-Sebastes_umbro... *
+>Cluster 253
+0	351aa, >sws2-Poecilia_retic... *
+>Cluster 254
+0	351aa, >sws2-Oreochromis_ni... *
+>Cluster 255
+0	350aa, >rh2-Anguilla_anguil... *
+1	350aa, >rh2-Anguilla_anguil... at 93.43%
+>Cluster 256
+0	349aa, >rh2-Zebrafish-rh2.4... *
+1	349aa, >rh2-Zebrafish-rh2.3... at 91.98%
+>Cluster 257
+0	349aa, >rh2-Zebrafish-rh2.1... *
+1	349aa, >rh2-Zebrafish-rh2.2... at 92.55%
+>Cluster 258
+0	349aa, >sws1-Polypterus_sen... *
+>Cluster 259
+0	348aa, >opn8b-Sebastes_umbr... *
+>Cluster 260
+0	347aa, >parapinopsin-Poecil... *
+>Cluster 261
+0	347aa, >parapinopsin-Oreoch... *
+>Cluster 262
+0	347aa, >parietopsin-Hippoca... *
+1	347aa, >parietopsin-Hippoca... at 99.14%
+>Cluster 263
+0	347aa, >rh2-Anguilla_anguil... *
+>Cluster 264
+0	347aa, >rrh-Lepisosteus_ocu... *
+>Cluster 265
+0	347aa, >sws1-Sebastes_umbro... *
+>Cluster 266
+0	346aa, >opn8a-Lepisosteus_o... *
+>Cluster 267
+0	346aa, >sws1-Lepisosteus_oc... *
+>Cluster 268
+0	345aa, >opn8b-Takifugu_rubr... *
+>Cluster 269
+0	345aa, >parapinopsin-Anguil... *
+>Cluster 270
+0	345aa, >parapinopsin-Takifu... *
+1	342aa, >parapinopsin-Takifu... at 96.20%
+>Cluster 271
+0	345aa, >rh2-Sebastes_umbros... *
+>Cluster 272
+0	345aa, >rh2-Takifugu_rubrip... *
+>Cluster 273
+0	345aa, >rh2-Poecilia_reticu... *
+>Cluster 274
+0	345aa, >rh2-Sebastes_umbros... *
+>Cluster 275
+0	344aa, >opn8b-Poecilia_reti... *
+>Cluster 276
+0	344aa, >parapinopsin-Sebast... *
+>Cluster 277
+0	343aa, >opn8b-Gasterosteus_... *
+>Cluster 278
+0	341aa, >opn8a-Gadus_morhua-... *
+>Cluster 279
+0	341aa, >parapinopsin-Zebraf... *
+>Cluster 280
+0	341aa, >rrh-Hippocampus_zos... *
+>Cluster 281
+0	340aa, >parapinopsin-Hippoc... *
+>Cluster 282
+0	339aa, >parapinopsin-Zebraf... *
+>Cluster 283
+0	339aa, >parapinopsin-Sebast... *
+>Cluster 284
+0	339aa, >parapinopsin-Gaster... *
+>Cluster 285
+0	339aa, >tmt2-Lepisosteus_oc... *
+>Cluster 286
+0	338aa, >sws1-Gasterosteus_a... *
+>Cluster 287
+0	337aa, >parapinopsin-Oreoch... *
+>Cluster 288
+0	337aa, >parapinopsin-Gaster... *
+>Cluster 289
+0	336aa, >opn8b-Polypterus_se... *
+>Cluster 290
+0	336aa, >parapinopsin-Takifu... *
+>Cluster 291
+0	336aa, >parietopsin-Zebrafi... *
+>Cluster 292
+0	336aa, >rrh-Gadus_morhua---... *
+>Cluster 293
+0	336aa, >rrh-Poecilia_reticu... *
+>Cluster 294
+0	336aa, >rrh-Oreochromis_nil... *
+>Cluster 295
+0	336aa, >rrh-Sebastes_umbros... *
+1	336aa, >rrh-Gasterosteus_ac... at 92.26%
+>Cluster 296
+0	336aa, >sws1-Zebrafish-sws1... *
+>Cluster 297
+0	335aa, >opn8a-Zebrafish-opn... *
+>Cluster 298
+0	335aa, >sws1-Poecilia_retic... *
+>Cluster 299
+0	335aa, >sws1-Oreochromis_ni... *
+>Cluster 300
+0	334aa, >rrh-Zebrafish-rrh... *
+>Cluster 301
+0	333aa, >rrh-Takifugu_rubrip... *
+>Cluster 302
+0	332aa, >rrh-Anguilla_anguil... *
+>Cluster 303
+0	332aa, >rrh-Polypterus_sene... *
+>Cluster 304
+0	326aa, >parapinopsin-Gadus_... *
+>Cluster 305
+0	326aa, >tmt2-Takifugu_rubri... *
+>Cluster 306
+0	325aa, >parapinopsin-Hippoc... *
+>Cluster 307
+0	322aa, >parapinopsin-Lepiso... *
+>Cluster 308
+0	322aa, >parietopsin-Oreochr... *
+>Cluster 309
+0	322aa, >pinopsin-Polypterus... *
+>Cluster 310
+0	310aa, >tmt1-Polypterus_sen... *
+>Cluster 311
+0	302aa, >rgr-Hippocampus_zos... *
+>Cluster 312
+0	298aa, >rgr-Gadus_morhua---... *
+>Cluster 313
+0	295aa, >rgr-Poecilia_reticu... at 91.19%
+1	295aa, >rgr-Oreochromis_nil... at 93.22%
+2	295aa, >rgr-Gasterosteus_ac... at 94.58%
+3	296aa, >rgr-Sebastes_umbros... *
+4	295aa, >rgr-Takifugu_rubrip... at 93.22%
+5	295aa, >rgr-Hippocampus_zos... at 93.56%
+>Cluster 314
+0	295aa, >rgr-Polypterus_sene... *
+>Cluster 315
+0	295aa, >rgr-Lepisosteus_ocu... *
+>Cluster 316
+0	295aa, >rgr-Zebrafish-rgr1... *
+>Cluster 317
+0	294aa, >rgr-Anguilla_anguil... *
+>Cluster 318
+0	293aa, >rgr-Poecilia_reticu... *
+>Cluster 319
+0	293aa, >rgr-Oreochromis_nil... *
+>Cluster 320
+0	293aa, >rgr-Gadus_morhua---... *
+>Cluster 321
+0	293aa, >rgr-Takifugu_rubrip... *
+>Cluster 322
+0	293aa, >rgr-Sebastes_umbros... *
+>Cluster 323
+0	293aa, >rgr-Gasterosteus_ac... *
+>Cluster 324
+0	292aa, >rgr-Anguilla_anguil... *
+>Cluster 325
+0	291aa, >rgr-Zebrafish-rgr2... *

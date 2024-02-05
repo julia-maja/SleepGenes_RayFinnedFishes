@@ -1,0 +1,641 @@
+IQ-TREE multicore version 2.0-rc1 for Linux 64-bit built Jan 17 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    sei52.cluster.bc2.ch (AVX2, FMA3, 503 GB RAM)
+Command: iqtree -s CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln -st AA -nt 8 -bb 1000
+Seed:    121363 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Feb 16 13:12:12 2023
+Kernel:  AVX+FMA - 8 threads (8 CPU cores detected)
+
+Reading alignment file CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln ... Fasta format detected
+Alignment most likely contains protein sequences
+Alignment has 367 sequences with 820 columns, 819 distinct patterns
+768 parsimony-informative, 43 singleton sites, 9 constant sites
+                                                         Gap/Ambiguity  Composition  p-value
+   1  Zebrafish-opn4x2                                          43.90%    failed      0.07%
+   2  Zebrafish-opn4m3                                          31.71%    failed      0.26%
+   3  Zebrafish-opn4m2                                          39.15%    failed      1.30%
+   4  Zebrafish-opn4m1                                          29.76%    failed      0.01%
+   5  Zebrafish-rgr2                                            64.76%    passed     57.01%
+   6  Zebrafish-rgr1                                            64.02%    passed     82.92%
+   7  Zebrafish-rrh                                             59.27%    passed      6.41%
+   8  Zebrafish-opn9                                            44.76%    failed      0.14%
+   9  Zebrafish-opn8c                                           51.46%    passed     60.76%
+  10  Zebrafish-opn8b                                           56.46%    passed     46.01%
+  11  Zebrafish-opn8a                                           59.15%    passed     94.87%
+  12  Zebrafish-opn7d                                           50.85%    passed     79.26%
+  13  Zebrafish-opn7c                                           50.85%    passed     22.53%
+  14  Zebrafish-opn7b                                           51.46%    passed     17.11%
+  15  Zebrafish-opn7a                                           44.76%    passed     20.62%
+  16  Zebrafish-opn6b                                           52.56%    passed      9.33%
+  17  Zebrafish-opn6a                                           49.02%    passed      9.61%
+  18  Zebrafish-opn5                                            57.07%    passed     13.00%
+  19  Zebrafish-opn3                                            53.05%    passed     51.44%
+  20  Zebrafish-tmt3b                                           51.83%    passed     69.96%
+  21  Zebrafish-tmt3a                                           52.80%    passed     78.15%
+  22  Zebrafish-tmt2b                                           53.90%    passed     11.33%
+  23  Zebrafish-tmt2a                                           56.46%    passed     76.91%
+  24  Zebrafish-tmt1b                                           53.54%    passed     90.63%
+  25  Zebrafish-tmt1a                                           54.88%    passed     72.39%
+  26  Zebrafish-parietopsin                                     59.15%    passed     35.29%
+  27  Zebrafish-parapinopsin-2                                  58.66%    passed     67.40%
+  28  Zebrafish-parapinopsin-1                                  58.41%    passed      5.47%
+  29  Zebrafish-va2                                             52.44%    passed     26.72%
+  30  Zebrafish-va1                                             54.02%    passed     77.88%
+  31  Zebrafish-lws2                                            56.59%    passed     17.50%
+  32  Zebrafish-lws1                                            56.46%    passed      6.68%
+  33  Zebrafish-sws1                                            59.15%    failed      2.45%
+  34  Zebrafish-exorh                                           56.83%    passed     62.81%
+  35  Zebrafish-sws2                                            56.83%    passed     74.61%
+  36  Zebrafish-rh2.4                                           57.44%    passed     22.29%
+  37  Zebrafish-rh2.3                                           57.44%    passed     45.71%
+  38  Zebrafish-opn4x1                                          35.37%    failed      0.01%
+  39  Zebrafish-rh2.2                                           57.44%    passed     36.10%
+  40  Zebrafish-rh2.1                                           57.44%    passed     35.76%
+  41  Zebrafish-rh1.2                                           56.71%    passed     40.16%
+  42  Zebrafish-rh1.1                                           56.83%    failed      4.20%
+  43  Homo_sapiens_GPCR52_NM_005684.5                           58.29%    passed     11.00%
+  44  Anguilla_anguilla---rna-XM_035380863.1_1                  58.05%    passed     94.29%
+  45  Anguilla_anguilla---rna-XM_035381196.1_1                  51.46%    passed     34.77%
+  46  Anguilla_anguilla---rna-XM_035381452.1_1                  57.68%    passed      8.32%
+  47  Anguilla_anguilla---rna-XM_035381459.1_1                  57.32%    passed     20.79%
+  48  Anguilla_anguilla---rna-XM_035381460.1_1                  57.32%    passed     18.04%
+  49  Anguilla_anguilla---rna-XM_035383231.1_1                  56.10%    passed     36.96%
+  50  Anguilla_anguilla---rna-XM_035383510.1_1                  57.07%    failed      1.28%
+  51  Anguilla_anguilla---rna-XM_035386914.1_1                  56.22%    passed     87.65%
+  52  Anguilla_anguilla---rna-XM_035391554.1_1                  30.98%    passed     18.89%
+  53  Anguilla_anguilla---rna-XM_035392713.1_1                  54.39%    passed     37.18%
+  54  Anguilla_anguilla---rna-XM_035399438.1_1                  64.15%    passed     95.43%
+  55  Anguilla_anguilla---rna-XM_035399654.1_1                  53.05%    passed     63.34%
+  56  Anguilla_anguilla---rna-XM_035399730.1_1                  31.71%    failed      3.16%
+  57  Anguilla_anguilla---rna-XM_035399805.1_1                  51.34%    passed     80.41%
+  58  Anguilla_anguilla---rna-XM_035400882.1_1                  50.12%    passed     41.66%
+  59  Anguilla_anguilla---rna-XM_035403289.1_1                  31.10%    passed     29.01%
+  60  Anguilla_anguilla---rna-XM_035403407.1_1                  51.71%    passed     97.22%
+  61  Anguilla_anguilla---rna-XM_035403667.1_1                  64.39%    passed     67.78%
+  62  Anguilla_anguilla---rna-XM_035406455.1_1                  49.51%    failed      4.31%
+  63  Anguilla_anguilla---rna-XM_035408547.1_1                  52.07%    failed      2.50%
+  64  Anguilla_anguilla---rna-XM_035412882.1_1                  46.22%    failed      2.14%
+  65  Anguilla_anguilla---rna-XM_035413076.1_1                  50.98%    passed     30.07%
+  66  Anguilla_anguilla---rna-XM_035417426.1_1                  59.51%    failed      3.43%
+  67  Anguilla_anguilla---rna-XM_035421351.1_1                  55.85%    passed     23.11%
+  68  Anguilla_anguilla---rna-XM_035421376.1_1                  51.83%    passed     95.60%
+  69  Anguilla_anguilla---rna-XM_035422602.1_1                  53.66%    failed      0.01%
+  70  Anguilla_anguilla---rna-XM_035423031.1_1                  51.22%    passed      7.78%
+  71  Anguilla_anguilla---rna-XM_035428457.1_1                  52.93%    passed     55.17%
+  72  Anguilla_anguilla---rna-XM_035429327.1_1                  39.76%    failed      0.00%
+  73  Anguilla_anguilla---rna-XM_035432875.1_1                  51.46%    passed     34.36%
+  74  Anguilla_anguilla---rna-XM_035435626.1_1                  35.85%    passed     23.33%
+  75  Gadus_morhua---rna-XM_030339331.1_1                       30.73%    failed      0.88%
+  76  Gadus_morhua---rna-XM_030341045.1_1                       64.27%    passed     85.81%
+  77  Gadus_morhua---rna-XM_030343547.1_1                       54.02%    passed     18.83%
+  78  Gadus_morhua---rna-XM_030343580.1_1                       54.02%    passed     21.42%
+  79  Gadus_morhua---rna-XM_030344471.1_1                       58.90%    passed     11.65%
+  80  Gadus_morhua---rna-XM_030344941.1_1                       39.02%    failed      0.18%
+  81  Gadus_morhua---rna-XM_030345225.1_1                       56.95%    passed     97.41%
+  82  Gadus_morhua---rna-XM_030345419.1_1                       57.07%    passed     59.73%
+  83  Gadus_morhua---rna-XM_030348260.1_1                       51.95%    failed      0.42%
+  84  Gadus_morhua---rna-XM_030351080.1_1                       51.95%    passed     49.49%
+  85  Gadus_morhua---rna-XM_030353516.1_1                       57.07%    passed     25.82%
+  86  Gadus_morhua---rna-XM_030353760.1_1                       51.59%    passed     27.46%
+  87  Gadus_morhua---rna-XM_030354370.1_1                       31.22%    failed      0.99%
+  88  Gadus_morhua---rna-XM_030357147.1_1                       59.02%    passed     14.30%
+  89  Gadus_morhua---rna-XM_030359731.1_1                       32.56%    failed      0.05%
+  90  Gadus_morhua---rna-XM_030363523.1_1                       43.17%    failed      1.31%
+  91  Gadus_morhua---rna-XM_030363920.1_1                       70.73%    passed     12.89%
+  92  Gadus_morhua---rna-XM_030364006.1_1                       57.20%    passed      5.48%
+  93  Gadus_morhua---rna-XM_030364508.1_1                       57.07%    failed      4.64%
+  94  Gadus_morhua---rna-XM_030364964.1_1                       51.46%    passed     27.22%
+  95  Gadus_morhua---rna-XM_030365189.1_1                       49.15%    failed      2.11%
+  96  Gadus_morhua---rna-XM_030366384.1_1                       54.27%    passed     37.36%
+  97  Gadus_morhua---rna-XM_030368604.1_1                       51.83%    failed      0.54%
+  98  Gadus_morhua---rna-XM_030371533.1_1                       50.24%    passed     16.86%
+  99  Gadus_morhua---rna-XM_030372099.1_1                       40.49%    failed      0.00%
+ 100  Gadus_morhua---rna-XM_030373672.1_1                       57.20%    passed     80.21%
+ 101  Gadus_morhua---rna-XM_030375091.1_1                       56.71%    passed     12.32%
+ 102  Gadus_morhua---rna-XM_030375092.1_1                       57.44%    passed      8.09%
+ 103  Gadus_morhua---rna-XM_030375093.1_1                       57.68%    passed      8.29%
+ 104  Gadus_morhua---rna-XM_030375119.1_1                       60.37%    passed      8.82%
+ 105  Gadus_morhua---rna-XM_030375486.1_1                       57.07%    passed     96.55%
+ 106  Gadus_morhua---rna-XM_030378228.1_1                       49.27%    passed     85.95%
+ 107  Gadus_morhua---rna-XM_030379342.1_1                       52.80%    passed     65.73%
+ 108  Gadus_morhua---rna-XM_030379348.1_1                       64.02%    passed     97.69%
+ 109  Gadus_morhua---rna-XM_030379752.1_1                       37.56%    failed      0.02%
+ 110  Gadus_morhua---rna-XM_030379847.1_1                       52.44%    passed     63.09%
+ 111  Gasterosteus_aculeatus_aculeatus---rna-XM_040160045.1_1   58.17%    passed     62.81%
+ 112  Gasterosteus_aculeatus_aculeatus---rna-XM_040160566.1_1   51.22%    passed     10.91%
+ 113  Gasterosteus_aculeatus_aculeatus---rna-XM_040161199.1_1   56.22%    passed     39.56%
+ 114  Gasterosteus_aculeatus_aculeatus---rna-XM_040161227.1_1   56.95%    passed     51.33%
+ 115  Gasterosteus_aculeatus_aculeatus---rna-XM_040161852.1_1   56.10%    passed     17.83%
+ 116  Gasterosteus_aculeatus_aculeatus---rna-XM_040165777.1_1   50.98%    passed     68.23%
+ 117  Gasterosteus_aculeatus_aculeatus---rna-XM_040167752.1_1   50.24%    passed      7.65%
+ 118  Gasterosteus_aculeatus_aculeatus---rna-XM_040170412.1_1   46.22%    failed      0.23%
+ 119  Gasterosteus_aculeatus_aculeatus---rna-XM_040172154.1_1   50.98%    passed     52.03%
+ 120  Gasterosteus_aculeatus_aculeatus---rna-XM_040175195.1_1   58.78%    passed     25.95%
+ 121  Gasterosteus_aculeatus_aculeatus---rna-XM_040175963.1_1   35.73%    passed     11.91%
+ 122  Gasterosteus_aculeatus_aculeatus---rna-XM_040177056.1_1   64.27%    passed     22.63%
+ 123  Gasterosteus_aculeatus_aculeatus---rna-XM_040177709.1_1   50.12%    passed     11.17%
+ 124  Gasterosteus_aculeatus_aculeatus---rna-XM_040178094.1_1   52.68%    passed     51.86%
+ 125  Gasterosteus_aculeatus_aculeatus---rna-XM_040179086.1_1   64.02%    passed     91.26%
+ 126  Gasterosteus_aculeatus_aculeatus---rna-XM_040179264.1_1   53.17%    passed     76.03%
+ 127  Gasterosteus_aculeatus_aculeatus---rna-XM_040179400.1_1   31.59%    failed      2.41%
+ 128  Gasterosteus_aculeatus_aculeatus---rna-XM_040180810.1_1   54.39%    failed      0.06%
+ 129  Gasterosteus_aculeatus_aculeatus---rna-XM_040185538.1_1   50.12%    passed      6.39%
+ 130  Gasterosteus_aculeatus_aculeatus---rna-XM_040192176.1_1   56.83%    passed     55.45%
+ 131  Gasterosteus_aculeatus_aculeatus---rna-XM_040192247.1_1   58.90%    passed     13.29%
+ 132  Gasterosteus_aculeatus_aculeatus---rna-XM_040192343.1_1   50.98%    passed     51.31%
+ 133  Gasterosteus_aculeatus_aculeatus---rna-XM_040192611.1_1   57.07%    passed      5.55%
+ 134  Gasterosteus_aculeatus_aculeatus---rna-XM_040193995.1_1   50.98%    passed     33.43%
+ 135  Gasterosteus_aculeatus_aculeatus---rna-XM_040196704.1_1   33.29%    failed      3.31%
+ 136  Gasterosteus_aculeatus_aculeatus---rna-XM_040197824.1_1   35.49%    failed      0.01%
+ 137  Gasterosteus_aculeatus_aculeatus---rna-XM_040199514.1_1   59.02%    failed      0.96%
+ 138  Gasterosteus_aculeatus_aculeatus---rna-XM_040202122.1_1   50.98%    passed     32.67%
+ 139  Gasterosteus_aculeatus_aculeatus---rna-XM_040203013.1_1   57.20%    passed     86.69%
+ 140  Gasterosteus_aculeatus_aculeatus---rna-XM_040203330.1_1   71.95%    failed      0.33%
+ 141  Gasterosteus_aculeatus_aculeatus---rna-XM_040203617.1_1   57.07%    passed      8.36%
+ 142  Gasterosteus_aculeatus_aculeatus---rna-XM_040204459.1_1   56.46%    passed     37.25%
+ 143  Gasterosteus_aculeatus_aculeatus---rna-XM_040205081.1_1   58.66%    passed     68.00%
+ 144  Hippocampus_zosterae---rna-XM_052051655.1_1               51.59%    passed     46.03%
+ 145  Hippocampus_zosterae---rna-XM_052052563.1_1               49.15%    passed     64.26%
+ 146  Hippocampus_zosterae---rna-XM_052053003.1_1               56.59%    passed     75.06%
+ 147  Hippocampus_zosterae---rna-XM_052053597.1_1               56.46%    passed     31.02%
+ 148  Hippocampus_zosterae---rna-XM_052054472.1_1               51.34%    passed     17.82%
+ 149  Hippocampus_zosterae---rna-XM_052056050.1_1               56.71%    passed     23.17%
+ 150  Hippocampus_zosterae---rna-XM_052056272.1_1               56.71%    passed     26.10%
+ 151  Hippocampus_zosterae---rna-XM_052056811.1_1               51.34%    passed     18.07%
+ 152  Hippocampus_zosterae---rna-XM_052057274.1_1               60.37%    passed     59.73%
+ 153  Hippocampus_zosterae---rna-XM_052057555.1_1               56.83%    failed      2.69%
+ 154  Hippocampus_zosterae---rna-XM_052060659.1_1               57.68%    failed      0.00%
+ 155  Hippocampus_zosterae---rna-XM_052061458.1_1               57.68%    failed      0.00%
+ 156  Hippocampus_zosterae---rna-XM_052067833.1_1               31.95%    failed      1.23%
+ 157  Hippocampus_zosterae---rna-XM_052069490.1_1               63.17%    passed     62.74%
+ 158  Hippocampus_zosterae---rna-XM_052069534.1_1               35.98%    failed      0.40%
+ 159  Hippocampus_zosterae---rna-XM_052075393.1_1               57.07%    passed     94.85%
+ 160  Hippocampus_zosterae---rna-XM_052075496.1_1               57.07%    passed      8.28%
+ 161  Hippocampus_zosterae---rna-XM_052076686.1_1               58.66%    passed     45.70%
+ 162  Hippocampus_zosterae---rna-XM_052077331.1_1               56.59%    passed     29.50%
+ 163  Hippocampus_zosterae---rna-XM_052079026.1_1               52.93%    failed      0.81%
+ 164  Hippocampus_zosterae---rna-XM_052079387.1_1               32.56%    failed      0.05%
+ 165  Hippocampus_zosterae---rna-XM_052079451.1_1               64.02%    passed     81.15%
+ 166  Hippocampus_zosterae---rna-XM_052079813.1_1               53.17%    passed     57.51%
+ 167  Hippocampus_zosterae---rna-XM_052080259.1_1               32.56%    failed      0.02%
+ 168  Hippocampus_zosterae---rna-XM_052080803.1_1               49.51%    passed     36.76%
+ 169  Hippocampus_zosterae---rna-XM_052081361.1_1               53.05%    passed     90.48%
+ 170  Hippocampus_zosterae---rna-XM_052082274.1_1               53.66%    passed     91.25%
+ 171  Hippocampus_zosterae---rna-XM_052085831.1_1               58.54%    failed      0.29%
+ 172  Hippocampus_zosterae---rna-XM_052087154.1_1               51.22%    passed     78.28%
+ 173  Hippocampus_zosterae---rna-XM_052087840.1_1               48.41%    passed     31.23%
+ 174  Lepisosteus_oculatus---rna-XM_006625291.2_1               55.61%    passed     49.70%
+ 175  Lepisosteus_oculatus---rna-XM_006625292.2_1               55.85%    passed     87.42%
+ 176  Lepisosteus_oculatus---rna-XM_006628473.2_1               56.71%    passed     49.75%
+ 177  Lepisosteus_oculatus---rna-XM_006630284.2_1               64.02%    passed     18.32%
+ 178  Lepisosteus_oculatus---rna-XM_006630393.2_1               52.56%    passed     64.08%
+ 179  Lepisosteus_oculatus---rna-XM_006630625.2_1               56.83%    passed      6.64%
+ 180  Lepisosteus_oculatus---rna-XM_006630896.2_1               31.22%    failed      1.39%
+ 181  Lepisosteus_oculatus---rna-XM_006631127.2_1               60.73%    passed     37.28%
+ 182  Lepisosteus_oculatus---rna-XM_006632994.2_1               58.90%    passed     62.98%
+ 183  Lepisosteus_oculatus---rna-XM_006633219.2_1               57.80%    passed     39.22%
+ 184  Lepisosteus_oculatus---rna-XM_006637633.2_1               51.71%    passed     73.88%
+ 185  Lepisosteus_oculatus---rna-XM_006637783.2_1               51.95%    passed     25.09%
+ 186  Lepisosteus_oculatus---rna-XM_006638657.2_1               53.05%    failed      3.58%
+ 187  Lepisosteus_oculatus---rna-XM_006638716.2_1               50.98%    passed     38.90%
+ 188  Lepisosteus_oculatus---rna-XM_015337843.1_1               55.00%    failed      0.08%
+ 189  Lepisosteus_oculatus---rna-XM_015339535.1_1               45.98%    failed      1.05%
+ 190  Lepisosteus_oculatus---rna-XM_015340274.1_1               37.20%    failed      0.91%
+ 191  Lepisosteus_oculatus---rna-XM_015343997.1_1               57.80%    passed     50.46%
+ 192  Lepisosteus_oculatus---rna-XM_015345233.1_1               57.80%    failed      0.73%
+ 193  Lepisosteus_oculatus---rna-XM_015347078.1_1               48.41%    passed     79.62%
+ 194  Lepisosteus_oculatus---rna-XM_015347937.1_1               56.59%    passed     29.19%
+ 195  Lepisosteus_oculatus---rna-XM_015349763.1_1               55.12%    passed     53.17%
+ 196  Lepisosteus_oculatus---rna-XM_015350551.1_1               55.61%    passed     10.16%
+ 197  Lepisosteus_oculatus---rna-XM_015351606.1_1               57.07%    passed     67.58%
+ 198  Lepisosteus_oculatus---rna-XM_015352227.1_1               72.07%    failed      1.77%
+ 199  Lepisosteus_oculatus---rna-XM_015364410.1_1               53.54%    passed     80.13%
+ 200  Lepisosteus_oculatus---rna-XM_015364771.1_1               50.61%    passed     85.04%
+ 201  Lepisosteus_oculatus---rna-XM_015367820.1_1               56.22%    passed     74.85%
+ 202  Oreochromis_niloticus---rna-XM_003437884.4_1              45.00%    passed     56.08%
+ 203  Oreochromis_niloticus---rna-XM_003438995.5_1              57.20%    passed     36.76%
+ 204  Oreochromis_niloticus---rna-XM_003439005.3_1              56.83%    passed     10.80%
+ 205  Oreochromis_niloticus---rna-XM_003439291.5_1              50.12%    passed     60.70%
+ 206  Oreochromis_niloticus---rna-XM_003440805.5_1              55.85%    passed     36.90%
+ 207  Oreochromis_niloticus---rna-XM_003441240.5_1              52.68%    passed     64.31%
+ 208  Oreochromis_niloticus---rna-XM_003441787.5_1              64.27%    passed     26.47%
+ 209  Oreochromis_niloticus---rna-XM_003442629.4_1              56.46%    passed     20.51%
+ 210  Oreochromis_niloticus---rna-XM_003442630.3_1              57.20%    passed     87.15%
+ 211  Oreochromis_niloticus---rna-XM_003442631.4_1              57.20%    passed     58.12%
+ 212  Oreochromis_niloticus---rna-XM_003444281.5_1              52.07%    passed     27.37%
+ 213  Oreochromis_niloticus---rna-XM_003446105.4_1              32.07%    failed      0.06%
+ 214  Oreochromis_niloticus---rna-XM_003448294.5_1              57.68%    passed      6.61%
+ 215  Oreochromis_niloticus---rna-XM_003448344.3_1              57.07%    passed      5.33%
+ 216  Oreochromis_niloticus---rna-XM_003448346.5_1              57.07%    passed     18.19%
+ 217  Oreochromis_niloticus---rna-XM_003448756.3_1              59.15%    passed     11.39%
+ 218  Oreochromis_niloticus---rna-XM_003451937.5_1              64.02%    passed     92.38%
+ 219  Oreochromis_niloticus---rna-XM_003453905.5_1              48.78%    passed     24.41%
+ 220  Oreochromis_niloticus---rna-XM_003458129.3_1              43.17%    failed      0.33%
+ 221  Oreochromis_niloticus---rna-XM_003458690.5_1              52.44%    passed     49.76%
+ 222  Oreochromis_niloticus---rna-XM_003459743.4_1              58.90%    passed     55.26%
+ 223  Oreochromis_niloticus---rna-XM_005448493.4_1              50.61%    passed     50.79%
+ 224  Oreochromis_niloticus---rna-XM_005448813.4_1              49.88%    passed     25.10%
+ 225  Oreochromis_niloticus---rna-XM_005453560.4_1              57.07%    failed      3.51%
+ 226  Oreochromis_niloticus---rna-XM_005457818.4_1              53.66%    passed     94.83%
+ 227  Oreochromis_niloticus---rna-XM_005465756.3_1              56.95%    passed     28.33%
+ 228  Oreochromis_niloticus---rna-XM_005467442.4_1              53.05%    passed     21.51%
+ 229  Oreochromis_niloticus---rna-XM_005471434.4_1              32.07%    failed      0.25%
+ 230  Oreochromis_niloticus---rna-XM_005477698.4_1              59.02%    failed      2.76%
+ 231  Oreochromis_niloticus---rna-XM_013272441.3_1              55.73%    failed      0.60%
+ 232  Oreochromis_niloticus---rna-XM_013276541.3_1              49.51%    passed     44.01%
+ 233  Oreochromis_niloticus---rna-XM_019355631.2_1              32.20%    failed      0.01%
+ 234  Oreochromis_niloticus---rna-XM_019361725.2_1              60.85%    passed     74.56%
+ 235  Oreochromis_niloticus---rna-XM_025897731.1_1              43.41%    failed      2.23%
+ 236  Oreochromis_niloticus---rna-XM_025898960.1_1              50.00%    passed     21.96%
+ 237  Oreochromis_niloticus---rna-XM_025900620.1_1              49.63%    passed     52.25%
+ 238  Poecilia_reticulata---rna-NM_001297450.1_1                57.07%    passed     29.17%
+ 239  Poecilia_reticulata---rna-NM_001297452.1_1                56.71%    passed     29.77%
+ 240  Poecilia_reticulata---rna-NM_001297454.1_1                56.83%    passed     86.26%
+ 241  Poecilia_reticulata---rna-NM_001297456.1_1                57.20%    passed     73.79%
+ 242  Poecilia_reticulata---rna-NM_001297458.1_1                57.07%    failed      1.85%
+ 243  Poecilia_reticulata---rna-NM_001297460.1_1                57.93%    passed     21.01%
+ 244  Poecilia_reticulata---rna-NM_001297490.1_1                59.15%    passed      8.13%
+ 245  Poecilia_reticulata---rna-NM_001312652.1_1                56.83%    passed      9.25%
+ 246  Poecilia_reticulata---rna-XM_008396477.2_1                51.71%    failed      1.74%
+ 247  Poecilia_reticulata---rna-XM_008397471.2_1                56.46%    passed      9.33%
+ 248  Poecilia_reticulata---rna-XM_008398279.2_1                58.05%    passed     44.83%
+ 249  Poecilia_reticulata---rna-XM_008398572.2_1                57.07%    passed     26.01%
+ 250  Poecilia_reticulata---rna-XM_008400164.1_1                59.02%    failed      1.07%
+ 251  Poecilia_reticulata---rna-XM_008409720.1_1                57.80%    passed     36.54%
+ 252  Poecilia_reticulata---rna-XM_008410572.2_1                56.46%    passed     38.00%
+ 253  Poecilia_reticulata---rna-XM_008411831.2_1                56.59%    passed     16.33%
+ 254  Poecilia_reticulata---rna-XM_008413897.2_1                49.88%    passed     21.32%
+ 255  Poecilia_reticulata---rna-XM_008414049.2_1                56.95%    passed     45.21%
+ 256  Poecilia_reticulata---rna-XM_008414379.2_1                51.59%    passed     17.80%
+ 257  Poecilia_reticulata---rna-XM_008414696.2_1                58.66%    passed     78.06%
+ 258  Poecilia_reticulata---rna-XM_008418500.2_1                32.20%    failed      0.55%
+ 259  Poecilia_reticulata---rna-XM_008420682.2_1                53.05%    passed     16.81%
+ 260  Poecilia_reticulata---rna-XM_008420807.2_1                49.51%    passed     82.18%
+ 261  Poecilia_reticulata---rna-XM_008424244.1_1                47.44%    passed     46.23%
+ 262  Poecilia_reticulata---rna-XM_008429537.2_1                64.02%    passed     88.85%
+ 263  Poecilia_reticulata---rna-XM_008430000.2_1                53.05%    passed     26.17%
+ 264  Poecilia_reticulata---rna-XM_008430285.2_1                50.00%    passed     22.23%
+ 265  Poecilia_reticulata---rna-XM_008430418.2_1                52.80%    passed     35.81%
+ 266  Poecilia_reticulata---rna-XM_008433140.2_1                71.34%    passed     11.71%
+ 267  Poecilia_reticulata---rna-XM_008434044.2_1                45.61%    passed     51.09%
+ 268  Poecilia_reticulata---rna-XM_008434773.2_1                56.22%    passed     86.43%
+ 269  Poecilia_reticulata---rna-XM_008436872.2_1                64.27%    passed     80.95%
+ 270  Poecilia_reticulata---rna-XM_008437056.2_1                31.83%    failed      0.01%
+ 271  Poecilia_reticulata---rna-XM_017308636.1_1                53.66%    failed      0.96%
+ 272  Poecilia_reticulata---rna-XM_017308833.1_1                40.49%    failed      0.29%
+ 273  Polypterus_senegalus---rna-XM_039735425.1_1               51.71%    passed     67.04%
+ 274  Polypterus_senegalus---rna-XM_039738374.1_1               50.98%    passed     66.12%
+ 275  Polypterus_senegalus---rna-XM_039738895.1_1               52.56%    passed     29.28%
+ 276  Polypterus_senegalus---rna-XM_039741155.1_1               60.98%    failed      4.41%
+ 277  Polypterus_senegalus---rna-XM_039742143.1_1               53.41%    passed     34.70%
+ 278  Polypterus_senegalus---rna-XM_039742986.1_1               55.49%    passed     24.79%
+ 279  Polypterus_senegalus---rna-XM_039743858.1_1               62.20%    passed     89.05%
+ 280  Polypterus_senegalus---rna-XM_039749234.1_1               56.71%    passed     34.57%
+ 281  Polypterus_senegalus---rna-XM_039749443.1_1               59.02%    passed     93.55%
+ 282  Polypterus_senegalus---rna-XM_039749873.1_1               56.71%    passed     95.82%
+ 283  Polypterus_senegalus---rna-XM_039750003.1_1               56.71%    passed     21.65%
+ 284  Polypterus_senegalus---rna-XM_039756907.1_1               60.73%    passed     40.77%
+ 285  Polypterus_senegalus---rna-XM_039759810.1_1               59.51%    passed     37.85%
+ 286  Polypterus_senegalus---rna-XM_039760890.1_1               52.44%    passed     89.38%
+ 287  Polypterus_senegalus---rna-XM_039761436.1_1               57.44%    passed     40.32%
+ 288  Polypterus_senegalus---rna-XM_039762411.1_1               51.59%    passed     90.30%
+ 289  Polypterus_senegalus---rna-XM_039768401.1_1               30.12%    failed      0.13%
+ 290  Polypterus_senegalus---rna-XM_039770561.1_1               48.90%    failed      3.72%
+ 291  Polypterus_senegalus---rna-XM_039771012.1_1               56.83%    passed     14.86%
+ 292  Polypterus_senegalus---rna-XM_039772349.1_1               64.02%    passed     96.59%
+ 293  Polypterus_senegalus---rna-XM_039774491.1_1               55.85%    passed     51.91%
+ 294  Sebastes_umbrosus---rna-XM_037749101.1_1                  53.54%    failed      0.06%
+ 295  Sebastes_umbrosus---rna-XM_037750909.1_1                  57.56%    passed     36.87%
+ 296  Sebastes_umbrosus---rna-XM_037751059.1_1                  46.46%    passed     61.62%
+ 297  Sebastes_umbrosus---rna-XM_037751100.1_1                  55.98%    passed     57.28%
+ 298  Sebastes_umbrosus---rna-XM_037751507.1_1                  56.83%    passed     41.61%
+ 299  Sebastes_umbrosus---rna-XM_037751880.1_1                  39.51%    failed      0.51%
+ 300  Sebastes_umbrosus---rna-XM_037753994.1_1                  31.59%    failed      0.05%
+ 301  Sebastes_umbrosus---rna-XM_037756111.1_1                  64.27%    passed     28.62%
+ 302  Sebastes_umbrosus---rna-XM_037757341.1_1                  48.17%    passed     40.69%
+ 303  Sebastes_umbrosus---rna-XM_037760727.1_1                  57.68%    passed     49.01%
+ 304  Sebastes_umbrosus---rna-XM_037763268.1_1                  85.73%    passed     23.96%
+ 305  Sebastes_umbrosus---rna-XM_037767346.1_1                  73.90%    passed     79.92%
+ 306  Sebastes_umbrosus---rna-XM_037768925.1_1                  57.07%    passed     11.78%
+ 307  Sebastes_umbrosus---rna-XM_037768937.1_1                  57.93%    failed      1.04%
+ 308  Sebastes_umbrosus---rna-XM_037771253.1_1                  57.20%    passed     83.60%
+ 309  Sebastes_umbrosus---rna-XM_037771265.1_1                  57.20%    passed     69.45%
+ 310  Sebastes_umbrosus---rna-XM_037771277.1_1                  57.07%    passed     98.94%
+ 311  Sebastes_umbrosus---rna-XM_037771289.1_1                  56.46%    passed     34.75%
+ 312  Sebastes_umbrosus---rna-XM_037771567.1_1                  51.34%    passed     84.16%
+ 313  Sebastes_umbrosus---rna-XM_037772006.1_1                  58.05%    passed     36.44%
+ 314  Sebastes_umbrosus---rna-XM_037772106.1_1                  51.34%    passed     66.04%
+ 315  Sebastes_umbrosus---rna-XM_037773667.1_1                  57.07%    failed      3.86%
+ 316  Sebastes_umbrosus---rna-XM_037773869.1_1                  56.95%    passed     42.87%
+ 317  Sebastes_umbrosus---rna-XM_037775992.1_1                  57.07%    passed     14.20%
+ 318  Sebastes_umbrosus---rna-XM_037776908.1_1                  32.80%    failed      0.20%
+ 319  Sebastes_umbrosus---rna-XM_037778556.1_1                  58.66%    passed     66.86%
+ 320  Sebastes_umbrosus---rna-XM_037778973.1_1                  57.93%    passed      5.34%
+ 321  Sebastes_umbrosus---rna-XM_037779264.1_1                  53.78%    passed     23.31%
+ 322  Sebastes_umbrosus---rna-XM_037781375.1_1                  52.80%    passed     70.00%
+ 323  Sebastes_umbrosus---rna-XM_037781542.1_1                  50.00%    passed     42.10%
+ 324  Sebastes_umbrosus---rna-XM_037782784.1_1                  48.66%    passed     66.93%
+ 325  Sebastes_umbrosus---rna-XM_037783337.1_1                  46.10%    passed     31.26%
+ 326  Sebastes_umbrosus---rna-XM_037783417.1_1                  63.90%    passed     95.04%
+ 327  Sebastes_umbrosus---rna-XM_037785219.1_1                  47.20%    passed     45.19%
+ 328  Sebastes_umbrosus---rna-XM_037787497.1_1                  50.85%    passed     23.89%
+ 329  Sebastes_umbrosus---rna-XM_037788385.1_1                  45.12%    failed      2.10%
+ 330  Sebastes_umbrosus---rna-XM_037789793.1_1                  53.66%    passed     62.01%
+ 331  Sebastes_umbrosus---rna-XM_037796471.1_1                  59.02%    failed      0.58%
+ 332  Takifugu_rubripes---rna-NM_001032606.1_1                  51.46%    passed     45.96%
+ 333  Takifugu_rubripes---rna-NM_001033712.1_1                  57.07%    passed     17.85%
+ 334  Takifugu_rubripes---rna-NM_001033849.1_1                  56.95%    passed     58.41%
+ 335  Takifugu_rubripes---rna-NM_001078631.1_1                  56.95%    passed     16.47%
+ 336  Takifugu_rubripes---rna-XM_003961230.3_1                  64.27%    passed     38.80%
+ 337  Takifugu_rubripes---rna-XM_003963359.2_1                  51.34%    passed     63.79%
+ 338  Takifugu_rubripes---rna-XM_003963556.2_1                  51.46%    passed     24.75%
+ 339  Takifugu_rubripes---rna-XM_003963622.2_1                  52.80%    passed     80.37%
+ 340  Takifugu_rubripes---rna-XM_003963666.2_1                  52.80%    passed     60.47%
+ 341  Takifugu_rubripes---rna-XM_003963765.3_1                  37.44%    passed      8.96%
+ 342  Takifugu_rubripes---rna-XM_003964019.3_1                  64.02%    passed     97.88%
+ 343  Takifugu_rubripes---rna-XM_003967659.2_1                  54.39%    passed     41.80%
+ 344  Takifugu_rubripes---rna-XM_003968127.3_1                  50.49%    passed     33.79%
+ 345  Takifugu_rubripes---rna-XM_003970179.3_1                  60.24%    passed     10.96%
+ 346  Takifugu_rubripes---rna-XM_003971574.2_1                  56.34%    passed     95.21%
+ 347  Takifugu_rubripes---rna-XM_003971846.2_1                  50.37%    passed     47.56%
+ 348  Takifugu_rubripes---rna-XM_003973285.2_1                  59.02%    passed     25.19%
+ 349  Takifugu_rubripes---rna-XM_003973672.3_1                  56.95%    passed     87.52%
+ 350  Takifugu_rubripes---rna-XM_003973673.3_1                  56.46%    passed     12.37%
+ 351  Takifugu_rubripes---rna-XM_003974819.2_1                  32.93%    passed      7.10%
+ 352  Takifugu_rubripes---rna-XM_003976724.2_1                  43.66%    failed      0.55%
+ 353  Takifugu_rubripes---rna-XM_011605927.2_1                  48.78%    passed     31.06%
+ 354  Takifugu_rubripes---rna-XM_011608244.2_1                  53.29%    passed     77.12%
+ 355  Takifugu_rubripes---rna-XM_011611415.2_1                  54.15%    passed     25.28%
+ 356  Takifugu_rubripes---rna-XM_011617028.2_1                  50.24%    passed     38.95%
+ 357  Takifugu_rubripes---rna-XM_029826028.1_1                  57.93%    passed     27.30%
+ 358  Takifugu_rubripes---rna-XM_029831023.1_1                  46.83%    passed     25.73%
+ 359  Takifugu_rubripes---rna-XM_029831790.1_1                  58.29%    passed      9.82%
+ 360  Takifugu_rubripes---rna-XM_029832414.1_1                  48.78%    passed     28.94%
+ 361  Takifugu_rubripes---rna-XM_029833004.1_1                  59.39%    failed      1.02%
+ 362  Takifugu_rubripes---rna-XM_029834573.1_1                  57.93%    passed     18.93%
+ 363  Takifugu_rubripes---rna-XM_029837567.1_1                  50.73%    passed     56.04%
+ 364  Takifugu_rubripes---rna-XM_029845263.1_1                  33.17%    failed      0.27%
+ 365  Takifugu_rubripes---rna-XM_029850052.1_1                  55.73%    passed     59.58%
+ 366  Takifugu_rubripes---rna-XM_029850060.1_1                  57.93%    passed     27.49%
+ 367  Takifugu_rubripes---rna-XM_029850632.1_1                  49.15%    passed     52.39%
+WARNING: 288 sequences contain more than 50% gaps/ambiguity
+****  TOTAL                                                     53.10%  79 sequences failed composition chi2 test (p-value<5%; df=19)
+
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.290 seconds
+Perform fast likelihood tree search using LG+I+G model...
+Estimate model parameters (epsilon = 5.000)
+Perform nearest neighbor interchange...
+Estimate model parameters (epsilon = 1.000)
+1. Initial log-likelihood: -129350.764
+Optimal log-likelihood: -129350.270
+Proportion of invariable sites: 0.004
+Gamma shape alpha: 1.252
+Parameters optimization took 1 rounds (0.476 sec)
+Time for fast ML tree search: 5.131 seconds
+
+NOTE: ModelFinder requires 479 MB RAM!
+ModelFinder will test up to 546 protein models (sample size: 820) ...
+ No. Model         -LnL         df  AIC          AICc         BIC
+  1  LG            136023.722   731 273509.443   285670.625   276951.945
+  2  LG+I          135800.919   732 273065.838   285400.459   276513.049
+  3  LG+G4         129404.785   732 260273.569   272608.190   263720.780
+  4  LG+I+G4       129350.185   733 260166.370   272678.510   263618.291
+  5  LG+R2         130892.502   733 263251.004   275763.143   266702.924
+  6  LG+R3         129723.407   735 260916.813   273796.813   264378.152
+  7  LG+R4         129341.344   737 260156.688   273422.688   263627.446
+  8  LG+R5         129155.848   739 259789.697   273461.197   263269.873
+  9  LG+R6         129012.668   741 259507.337   273605.337   262996.931
+ 10  LG+R7         129000.268   743 259486.536   274033.694   262985.549
+ 11  LG+R8         128961.514   745 259413.027   274433.838   262921.459
+ 12  LG+R9         128957.437   747 259408.873   274929.873   262926.724
+ 24  LG+F+R8       128743.691   764 259015.382   280268.473   262613.291
+ 25  LG+F+R9       128741.725   766 259015.450   281186.091   262622.777
+ 37  WAG+R8        129202.986   745 259895.972   274916.783   263404.404
+ 38  WAG+R9        129189.935   747 259873.869   275394.869   263391.719
+ 50  WAG+F+R8      128701.006   764 258930.012   280183.103   262527.921
+ 51  WAG+F+R9      128700.225   766 258932.450   281103.092   262539.777
+ 63  JTT+R8        127881.046   745 257252.093   272272.903   260760.524
+ 64  JTT+R9        127877.376   747 257248.753   272769.753   260766.603
+ 76  JTT+F+R8      127839.385   764 257206.769   278459.860   260804.678
+ 77  JTT+F+R9      127836.010   766 257204.020   279374.662   260811.347
+ 89  JTTDCMut+R8   127946.282   745 257382.563   272403.374   260890.995
+ 90  JTTDCMut+R9   127942.409   747 257378.817   272899.817   260896.668
+102  JTTDCMut+F+R8 127887.328   764 257302.655   278555.746   260900.564
+103  JTTDCMut+F+R9 127884.555   766 257301.110   279471.751   260908.437
+115  DCMut+R8      130342.896   745 262175.792   277196.603   265684.224
+116  DCMut+R9      130330.536   747 262155.072   277676.072   265672.922
+128  DCMut+F+R8    129493.250   764 260514.500   281767.591   264112.409
+129  DCMut+F+R9    129488.122   766 260508.244   282678.885   264115.571
+141  VT+R8         129246.884   745 259983.768   275004.579   263492.200
+142  VT+R9         129240.424   747 259974.848   275495.848   263492.698
+154  VT+F+R8       128863.749   764 259255.498   280508.589   262853.406
+155  VT+F+R9       128864.437   766 259260.874   281431.516   262868.201
+167  PMB+R8        130393.973   745 262277.946   277298.757   265786.378
+WARNING: Log-likelihood -130395 of PMB+R9 worse than PMB+R8 -130394
+168  PMB+R9        130394.975   747 262283.949   277804.949   265801.800
+180  PMB+F+R8      130528.648   764 262585.297   283838.387   266183.205
+181  PMB+F+R9      130528.555   766 262589.111   284759.752   266196.438
+193  Blosum62+R8   130839.964   745 263169.927   278190.738   266678.359
+194  Blosum62+R9   130820.720   747 263135.440   278656.440   266653.290
+206  Blosum62+F+R8 130592.350   764 262712.701   283965.792   266310.609
+207  Blosum62+F+R9 130591.341   766 262714.681   284885.323   266322.009
+219  Dayhoff+R8    130337.642   745 262165.285   277186.096   265673.716
+220  Dayhoff+R9    130325.112   747 262144.223   277665.223   265662.074
+232  Dayhoff+F+R8  129487.048   764 260502.097   281755.188   264100.005
+233  Dayhoff+F+R9  129481.586   766 260495.171   282665.813   264102.498
+245  mtREV+R8      134720.281   745 270930.562   285951.373   274438.994
+246  mtREV+R9      134712.064   747 270918.127   286439.127   274435.978
+258  mtREV+F+R8    131018.503   764 263565.006   284818.097   267162.914
+259  mtREV+F+R9    131009.994   766 263551.988   285722.630   267159.315
+271  mtART+R8      136809.030   745 275108.060   290128.870   278616.491
+WARNING: Log-likelihood -136827 of mtART+R9 worse than mtART+R8 -136809
+272  mtART+R9      136826.577   747 275147.154   290668.154   278665.005
+284  mtART+F+R8    134184.540   764 269897.081   291150.171   273494.989
+WARNING: Log-likelihood -134188 of mtART+F+R9 worse than mtART+F+R8 -134185
+285  mtART+F+R9    134187.715   766 269907.430   292078.072   273514.758
+297  mtZOA+R8      132635.660   745 266761.321   281782.132   270269.752
+298  mtZOA+R9      132607.676   747 266709.352   282230.352   270227.202
+310  mtZOA+F+R8    131225.402   764 263978.805   285231.896   267576.713
+311  mtZOA+F+R9    131204.960   766 263941.919   286112.561   267549.246
+323  mtMet+R8      133045.248   745 267580.496   282601.306   271088.927
+324  mtMet+R9      133037.115   747 267568.230   283089.230   271086.080
+336  mtMet+F+R8    129707.349   764 260942.699   282195.790   264540.607
+337  mtMet+F+R9    129696.919   766 260925.838   283096.480   264533.165
+349  mtVer+R8      134412.055   745 270314.110   285334.921   273822.542
+350  mtVer+R9      134407.908   747 270309.816   285830.816   273827.666
+362  mtVer+F+R8    131001.357   764 263530.714   284783.805   267128.623
+363  mtVer+F+R9    130993.740   766 263519.481   285690.122   267126.808
+375  mtInv+R8      133832.098   745 269154.196   284175.007   272662.628
+376  mtInv+R9      133825.023   747 269144.047   284665.047   272661.897
+388  mtInv+F+R8    129276.201   764 260080.402   281333.493   263678.311
+389  mtInv+F+R9    129255.944   766 260043.888   282214.529   263651.215
+401  mtMAM+R8      137731.211   745 276952.422   291973.233   280460.854
+402  mtMAM+R9      137712.898   747 276919.797   292440.797   280437.647
+414  mtMAM+F+R8    133882.270   764 269292.540   290545.631   272890.449
+415  mtMAM+F+R9    133867.305   766 269266.611   291437.252   272873.938
+427  HIVb+R8       130784.343   745 263058.686   278079.497   266567.118
+428  HIVb+R9       130748.093   747 262990.186   278511.186   266508.036
+440  HIVb+F+R8     130164.473   764 261856.946   283110.037   265454.855
+441  HIVb+F+R9     130150.088   766 261832.176   284002.817   265439.503
+453  HIVw+R8       136216.923   745 273923.847   288944.657   277432.278
+454  HIVw+R9       136214.048   747 273922.095   289443.095   277439.945
+466  HIVw+F+R8     133242.450   764 268012.899   289265.990   271610.808
+467  HIVw+F+R9     133236.004   766 268004.009   290174.650   271611.336
+479  FLU+R8        131242.279   745 263974.557   278995.368   267482.989
+480  FLU+R9        131240.226   747 263974.452   279495.452   267492.303
+492  FLU+F+R8      129990.615   764 261509.230   282762.321   265107.138
+493  FLU+F+R9      129983.500   766 261499.001   283669.642   265106.328
+505  rtREV+R8      131309.752   745 264109.505   279130.315   267617.936
+506  rtREV+R9      131304.604   747 264103.207   279624.207   267621.058
+518  rtREV+F+R8    130345.777   764 262219.553   283472.644   265817.462
+519  rtREV+F+R9    130341.846   766 262215.693   284386.334   265823.020
+531  cpREV+R8      129973.276   745 261436.551   276457.362   264944.983
+532  cpREV+R9      129943.447   747 261380.893   276901.893   264898.743
+544  cpREV+F+R8    129560.099   764 260648.197   281901.288   264246.106
+545  cpREV+F+R9    129549.306   766 260630.612   282801.253   264237.939
+Akaike Information Criterion:           JTT+F+R9
+Corrected Akaike Information Criterion: JTT+R8
+Bayesian Information Criterion:         JTT+R8
+Best-fit model: JTT+R8 chosen according to BIC
+
+All model information printed to CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.model.gz
+CPU time for ModelFinder: 55083.895 seconds (15h:18m:3s)
+Wall-clock time for ModelFinder: 6919.966 seconds (1h:55m:19s)
+Generating 1000 samples for ultrafast bootstrap (seed: 121363)...
+
+NOTE: 384 MB RAM (0 GB) is required!
+Estimate model parameters (epsilon = 0.100)
+1. Initial log-likelihood: -127881.046
+Optimal log-likelihood: -127880.949
+Site proportion and rates:  (0.055,0.052) (0.101,0.157) (0.089,0.288) (0.102,0.465) (0.192,0.721) (0.218,1.153) (0.219,1.961) (0.024,3.727)
+Parameters optimization took 1 rounds (4.631 sec)
+Computing ML distances based on estimated model parameters... 36.387 sec
+WARNING: Some pairwise ML distances are too long (saturated)
+Computing BIONJ tree...
+0.091 seconds
+Log-likelihood of BIONJ tree: -129006.989
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 98 parsimony trees... 28.941 second
+Computing log-likelihood of 98 initial trees ... 45.682 seconds
+Current best score: -127880.949
+
+Do NNI search on 20 best initial trees
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 1: -127865.242
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 9: -127833.887
+Iteration 10 / LogL: -127914.002 / Time: 0h:2m:55s
+Iteration 20 / LogL: -127913.336 / Time: 0h:4m:10s
+Finish initializing candidate tree set (20)
+Current best tree score: -127833.887 / CPU time: 233.149
+Number of iterations: 20
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 21: -127821.251
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 23: -127799.089
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 29: -127796.704
+Iteration 30 / LogL: -127803.242 / Time: 0h:5m:37s (0h:19m:12s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 36: -127791.947
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 39: -127789.291
+Iteration 40 / LogL: -127891.475 / Time: 0h:6m:50s (0h:17m:22s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 41: -127784.581
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 42: -127783.832
+Iteration 50 / LogL: -127919.459 / Time: 0h:8m:9s (0h:15m:18s left)
+Log-likelihood cutoff on original alignment: -127871.473
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 53: -127783.389
+Iteration 60 / LogL: -127800.428 / Time: 0h:9m:14s (0h:14m:33s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 68: -127776.342
+Iteration 70 / LogL: -127793.720 / Time: 0h:10m:23s (0h:14m:45s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 75: -127774.545
+Iteration 80 / LogL: -127788.856 / Time: 0h:11m:30s (0h:13m:50s left)
+Iteration 90 / LogL: -127784.196 / Time: 0h:12m:29s (0h:11m:55s left)
+Iteration 100 / LogL: -127788.213 / Time: 0h:13m:28s (0h:10m:12s left)
+Log-likelihood cutoff on original alignment: -127871.473
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.974
+NOTE: UFBoot does not converge, continue at least 100 more iterations
+Iteration 110 / LogL: -127791.481 / Time: 0h:14m:25s (0h:11m:54s left)
+Iteration 120 / LogL: -127801.633 / Time: 0h:15m:28s (0h:10m:23s left)
+Iteration 130 / LogL: -128050.598 / Time: 0h:16m:33s (0h:8m:59s left)
+Iteration 140 / LogL: -127795.355 / Time: 0h:17m:37s (0h:7m:36s left)
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 141: -127770.182
+Iteration 150 / LogL: -127783.917 / Time: 0h:18m:52s (0h:11m:31s left)
+Log-likelihood cutoff on original alignment: -127871.473
+Iteration 160 / LogL: -127888.702 / Time: 0h:19m:57s (0h:10m:10s left)
+Iteration 170 / LogL: -127773.876 / Time: 0h:21m:4s (0h:8m:51s left)
+Iteration 180 / LogL: -127811.818 / Time: 0h:22m:11s (0h:7m:33s left)
+Iteration 190 / LogL: -128021.642 / Time: 0h:23m:20s (0h:6m:17s left)
+Iteration 200 / LogL: -127773.873 / Time: 0h:24m:28s (0h:5m:2s left)
+Log-likelihood cutoff on original alignment: -127871.473
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.992
+Estimate model parameters (epsilon = 0.100)
+BETTER TREE FOUND at iteration 207: -127767.052
+Iteration 210 / LogL: -127777.209 / Time: 0h:25m:48s (0h:11m:58s left)
+Iteration 220 / LogL: -127885.826 / Time: 0h:26m:58s (0h:10m:42s left)
+Iteration 230 / LogL: -127772.378 / Time: 0h:28m:7s (0h:9m:27s left)
+Iteration 240 / LogL: -127789.546 / Time: 0h:29m:12s (0h:8m:11s left)
+Iteration 250 / LogL: -127774.666 / Time: 0h:30m:13s (0h:6m:55s left)
+Log-likelihood cutoff on original alignment: -127871.473
+Iteration 260 / LogL: -127772.448 / Time: 0h:31m:13s (0h:5m:40s left)
+Iteration 270 / LogL: -127787.156 / Time: 0h:32m:20s (0h:4m:26s left)
+Iteration 280 / LogL: -127779.991 / Time: 0h:33m:25s (0h:3m:14s left)
+Iteration 290 / LogL: -127786.751 / Time: 0h:34m:30s (0h:2m:1s left)
+Iteration 300 / LogL: -127776.562 / Time: 0h:35m:35s (0h:0m:49s left)
+Log-likelihood cutoff on original alignment: -127871.473
+NOTE: Bootstrap correlation coefficient of split occurrence frequencies: 0.995
+TREE SEARCH COMPLETED AFTER 308 ITERATIONS / Time: 0h:36m:28s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.010)
+1. Initial log-likelihood: -127767.052
+Optimal log-likelihood: -127767.039
+Site proportion and rates:  (0.053,0.051) (0.102,0.152) (0.093,0.290) (0.105,0.473) (0.190,0.732) (0.218,1.160) (0.218,1.982) (0.021,3.802)
+Parameters optimization took 1 rounds (2.807 sec)
+BEST SCORE FOUND : -127767.039
+Creating bootstrap support values...
+Split supports printed to NEXUS file CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.splits.nex
+Total tree length: 184.153
+
+Total number of iterations: 308
+CPU time used for tree search: 16989.890 sec (4h:43m:9s)
+Wall-clock time used for tree search: 2171.139 sec (0h:36m:11s)
+Total CPU time used: 17145.404 sec (4h:45m:45s)
+Total wall-clock time used: 2192.354 sec (0h:36m:32s)
+
+Computing bootstrap consensus tree...
+Reading input file CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.splits.nex...
+367 taxa and 1422 splits.
+Consensus tree written to CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.contree
+Reading input trees file CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.contree
+Log-likelihood of consensus tree: -127769.626
+
+Analysis results written to: 
+  IQ-TREE report:                CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.iqtree
+  Maximum-likelihood tree:       CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.treefile
+  Likelihood distances:          CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.mldist
+
+Ultrafast bootstrap approximation results written to:
+  Split support values:          CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.splits.nex
+  Consensus tree:                CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.contree
+  Screen log file:               CandidateOpsins_ZebrafishOpsins_Outgroup_trimal_gt07_con60.aln.log
+
+Date and Time: Thu Feb 16 15:44:11 2023
