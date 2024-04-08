@@ -37,33 +37,33 @@ All the file needed to run the scripts are available on FigShare, in folders wit
 For example, to run the script fish_ospins_ASTRAL.R, you will need the file contained in the folder fish_ospins_ASTRAL in the FigShare repository mentionned above.
 
 
-[fish_ospins_ASTRAL.R](fish_ospins_ASTRAL.sh) : Script to investigate the co-evolution of opsin subfamilies,  the co-evolution between visual opsins and non-visual opsins, and associations between ecological factors and the opsin repertoire
+[fish_ospins_ASTRAL.R](fish_ospins_ASTRAL.R) : Script to investigate the co-evolution of opsin subfamilies,  the co-evolution between visual opsins and non-visual opsins, and associations between ecological factors and the opsin repertoire
 
-[Rates_Selection_ASTRAL.R](Rates_Selection_ASTRAL.sh) : Script to analyse the birth and death rates of opsins, as well as their dN/dS + the association between dN/dS and ecological factors.
-
-
-[RNAseq_opsins.R](RNAseq_opsins.sh) : Script to perform the RNA-seq data anlysis presented in the study
-
-[Robustness_Assembly.R](Robustness_Assembly.sh) : Script to compare the opsin repertoire found in different genome assemblies of the same species
-
-[opsins_gene_tree.R](opsins_gene_tree.sh) : Script to draw the opsin maximum likelihood tree and the clade tree
-
-[Pinopsin.R](Pinopsin.sh) : Script to perform analysis of the pinopsin gene
-
-[opsins_Annot_comparison.R](opsins_Annot_comparison.sh) : Script to compare the results of the opsin mining pipeline used in this study and previously reported number of opsins in various ray-finned fishes. It also compare the results with the NCBI annotations.
-
-[Omega_OGG_analysis.R](Omega_OGG_analysis.sh) : Script to perform pGLS between the mean dN/dS per orthogroup and the number of opsins, considering all ray-finned fishes
-
-[OMEGA_OGG_pGLS_Teleost.R](OMEGA_OGG_pGLS_Teleost.sh) : Script to perform pGLS between the mean dN/dS per orthogroup and the number of opsins, considering only diploid teleost
+[Rates_Selection_ASTRAL.R](Rates_Selection_ASTRAL.R) : Script to analyse the birth and death rates of opsins, as well as their dN/dS + the association between dN/dS and ecological factors.
 
 
-[pGLS_Opsins_vs_OGG.R](pGLS_Opsins_vs_OGG.sh) : Script to perform pGLS between the number of copy number per orthogroup and the number of opsins, considering all ray-finned fishes
+[RNAseq_opsins.R](RNAseq_opsins.R) : Script to perform the RNA-seq data anlysis presented in the study
 
-[pGLS_Opsins_vs_OGG_teleost.R](pGLS_Opsins_vs_OGG_teleost.sh) : Script to perform pGLS between the number of copy number per orthogroup and the number of opsins, considering only diploid teleost
+[Robustness_Assembly.R](Robustness_Assembly.R) : Script to compare the opsin repertoire found in different genome assemblies of the same species
 
-[OGG_analysis_ASTRAL.R](OGG_analysis_ASTRAL.sh) : Script to analayse pGLS results between the gene copy number in each orthogroup and the number of opsins.
+[opsins_gene_tree.R](opsins_gene_tree.R) : Script to draw the opsin maximum likelihood tree and the clade tree
 
-[GW_Omega_analysis_ASTRAL.R](GW_Omega_analysis_ASTRAL.sh) : Script to analayse pGLS results between the mean dN/dS of each orthogroup and the number of opsins.
+[Pinopsin.R](Pinopsin.R) : Script to perform analysis of the pinopsin gene
+
+[opsins_Annot_comparison.R](opsins_Annot_comparison.R) : Script to compare the results of the opsin mining pipeline used in this study and previously reported number of opsins in various ray-finned fishes. It also compare the results with the NCBI annotations.
+
+[Omega_OGG_analysis.R](Omega_OGG_analysis.R) : Script to perform pGLS between the mean dN/dS per orthogroup and the number of opsins, considering all ray-finned fishes
+
+[OMEGA_OGG_pGLS_Teleost.R](OMEGA_OGG_pGLS_Teleost.R) : Script to perform pGLS between the mean dN/dS per orthogroup and the number of opsins, considering only diploid teleost
+
+
+[pGLS_Opsins_vs_OGG.R](pGLS_Opsins_vs_OGG.R) : Script to perform pGLS between the number of copy number per orthogroup and the number of opsins, considering all ray-finned fishes
+
+[pGLS_Opsins_vs_OGG_teleost.R](pGLS_Opsins_vs_OGG_teleost.R) : Script to perform pGLS between the number of copy number per orthogroup and the number of opsins, considering only diploid teleost
+
+[OGG_analysis_ASTRAL.R](OGG_analysis_ASTRAL.R) : Script to analayse pGLS results between the gene copy number in each orthogroup and the number of opsins.
+
+[GW_Omega_analysis_ASTRAL.R](GW_Omega_analysis_ASTRAL.R) : Script to analayse pGLS results between the mean dN/dS of each orthogroup and the number of opsins.
 
 
 !! Important : The results of gprofiler (enrichment analysis) in OGG_analysis_ASTRAL.R and GW_Omega_analysis_ASTRAL.R can be inconsistent with the study because of changes in the databases. To have the exact same results as the study, one can use the 2023-09-14 database, which you can access here: https://biit.cs.ut.ee/gprofiler_archive3/e110_eg57_p18/gost !!
