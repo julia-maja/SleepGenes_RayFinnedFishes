@@ -19,15 +19,17 @@ Note that the script is intented to be used in a SLURM environment.
 If you work in a non-slum environment, replace those two sbatch commands (line 127 and line 128) : 
 
 `sbatch --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.exo.rslt ; sleep 10" &`
+
 `sbatch --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.noexhaustive.exo.rslt ; sleep 10" &`
 
 by = 
 
 `nohup $scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.exo.rslt &`
+
 `nohup $scripts_location/exonerate-2.2.0-x86_64/bin/exonerate --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.noexhaustive.exo.rslt &`
 
 
-If you work under a slurm environment, modify --qos=6hours by an existing partition in your environment.
+If you work under a slurm environment, modify `--qos=6hours` by an existing partition in your environment.
 
 
 
