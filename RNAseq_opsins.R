@@ -2,6 +2,9 @@
 
 rm(list = ls())
 
+
+set.seed(2712)
+
 library("caper")
 library("patchwork")
 library("ape")

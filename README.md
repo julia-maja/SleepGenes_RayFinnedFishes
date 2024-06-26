@@ -84,11 +84,3 @@ For example, to run the script fish_ospins_ASTRAL.R, you will need the file cont
 
 
 !! Important : The results of gprofiler (enrichment analysis) in OGG_analysis_ASTRAL.R and GW_Omega_analysis_ASTRAL.R can be inconsistent with the study because of changes in the databases. To have the exact same results as the study, one can use the 2023-09-14 database, which you can access here: https://biit.cs.ut.ee/gprofiler_archive3/e110_eg57_p18/gost !!
-
-
-
-
-
-
-
-

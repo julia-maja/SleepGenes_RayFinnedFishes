@@ -566,6 +566,205 @@ left_join(corr_gene_names, all_pGLS_results, by="predictor") %>%
   arrange(R2)
 
 
+
+
+#### Candidate gene analysis x Non Visual ------
+
+Light_genes <- 
+  read.table("CommonName_Accession_OGG_Vision.csv",
+             header=FALSE,
+             sep=",")
+colnames(Light_genes) <- c("gene_name", "gene_accession", "OGG")
+
+Circadian_genes <- 
+  read.table("CommonName_Accession_OGG_Circadian.csv",
+             header=FALSE,
+             sep=",")
+colnames(Circadian_genes) <- c("gene_name", "gene_accession", "OGG")
+
+Light_OGG <- Light_genes %>% pull(OGG) %>% unique()
+Circadian_OGG <- Circadian_genes %>% pull(OGG) %>% unique()
+
+#Add those info to the table
+
+non_visual_pGLS_results_cand <- 
+  non_visual_pGLS_results %>%
+  mutate(Subset = case_when(
+    predictor %in% Light_OGG ~ "Light",
+    predictor %in% Circadian_OGG ~ "Circadian",
+    !(predictor %in% Light_OGG) & !(predictor %in% Circadian_OGG) ~ "Other"
+  ))
+
+
+#check the number of significant in both datasets
+
+obs_signif_light <- 
+  nrow(non_visual_pGLS_results_cand %>% 
+         filter(Bonferroni_pvalue <= 0.05) %>% 
+         filter(Subset == "Light"))
+
+obs_signif_circadian <- 
+  nrow(non_visual_pGLS_results_cand %>% 
+         filter(Bonferroni_pvalue <= 0.05) %>% 
+         filter(Subset == "Circadian"))
+
+
+
+
+#lets make a graph
+
+alpha_values <- 
+  c("Circadian"=1,
+    "Light"=1,
+    "Other"=0.05)
+shape_values <- 
+  c("Circadian"=15,
+    "Light"=17,
+    "Other"=0.05)
+
+
+non_visual_pGLS_results_cand %>%
+  filter(! Subset == "Other") %>%
+  ggplot(., aes(x=-log(pvalue), y=R2, color=slope_sign, alpha=Subset, shape=Subset)) +
+  geom_point() +
+  geom_vline(xintercept = -log(bonferoni_signif_treshhold), color="red", linetype="dashed") +
+  scale_color_manual(values = slope_sign_color) +
+  scale_alpha_manual(values = alpha_values) +
+  scale_shape_manual(values = shape_values) +
+  theme_classic() +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14)) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=18),
+        plot.subtitle=element_text(size=16)) +
+  theme(legend.position="none")
+
+
+#Lets perform simulation to see the enrichment ? 
+
+total_nb_signif <- nrow(non_visual_pGLS_results %>% filter(Bonferroni_pvalue <= 0.05) %>% filter(slope < 0))
+
+Simulation_non_visual_df <- as.data.frame(NULL)
+for(simu_nb in seq(1, 10000)){
+  
+  subset_picked <- 
+    non_visual_pGLS_results_cand %>%
+    sample_n(total_nb_signif) %>% 
+    pull(Subset)
+  nb_random_light <- length(which("Light" == subset_picked))
+  nb_random_circadian <- length(which("Circadian" == subset_picked))
+  
+  curr_df <- as.data.frame(cbind(simu_nb, nb_random_light, nb_random_circadian))
+  
+  Simulation_non_visual_df <- 
+    rbind(Simulation_non_visual_df, curr_df)
+  
+}
+
+#write.table(Simulation_non_visual_df,
+#            "~/Non_visual_opsins_Project/OGG_analysis/Contrasting_decay_extract_genes/Simulation_non_visual_df_omega.csv",
+#            col.names=TRUE,
+#            row.names=FALSE,
+#            quote=FALSE,
+#            sep=",")
+#
+
+Simulation_non_visual_df <- 
+  read.table("Simulation_non_visual_df_omega.csv",
+             header=TRUE,
+             sep=",")
+
+
+pvalue_light <- 
+  nrow(Simulation_non_visual_df %>%
+         filter(nb_random_light >= obs_signif_light))/10000
+
+pvalue_circadian <- 
+  nrow(Simulation_non_visual_df %>%
+         filter(nb_random_circadian >= obs_signif_circadian))/10000
+
+
+
+
+
+
+
+#### Candidate gene analysis x Visual ------
+
+Light_genes <- 
+  read.table("CommonName_Accession_OGG_Vision.csv",
+             header=FALSE,
+             sep=",")
+colnames(Light_genes) <- c("gene_name", "gene_accession", "OGG")
+
+Circadian_genes <- 
+  read.table("CommonName_Accession_OGG_Circadian.csv",
+             header=FALSE,
+             sep=",")
+colnames(Circadian_genes) <- c("gene_name", "gene_accession", "OGG")
+
+Light_OGG <- Light_genes %>% pull(OGG) %>% unique()
+Circadian_OGG <- Circadian_genes %>% pull(OGG) %>% unique()
+
+#Add those info to the table
+
+visual_pGLS_results_cand <- 
+  visual_pGLS_results %>%
+  mutate(Subset = case_when(
+    predictor %in% Light_OGG ~ "Light",
+    predictor %in% Circadian_OGG ~ "Circadian",
+    !(predictor %in% Light_OGG) & !(predictor %in% Circadian_OGG) ~ "Other"
+  ))
+
+
+#check the number of significant in both datasets
+
+obs_signif_light <- 
+  nrow(visual_pGLS_results_cand %>% 
+         filter(Bonferroni_pvalue <= 0.05) %>% 
+         filter(Subset == "Light"))
+
+obs_signif_circadian <- 
+  nrow(visual_pGLS_results_cand %>% 
+         filter(Bonferroni_pvalue <= 0.05) %>% 
+         filter(Subset == "Circadian"))
+
+
+
+
+#lets make a graph
+
+alpha_values <- 
+  c("Circadian"=1,
+    "Light"=1,
+    "Other"=0.05)
+shape_values <- 
+  c("Circadian"=15,
+    "Light"=17,
+    "Other"=0.05)
+
+
+visual_pGLS_results_cand %>%
+  filter(! Subset == "Other") %>%
+  ggplot(., aes(x=-log(pvalue), y=R2, color=slope_sign, alpha=Subset, shape=Subset)) +
+  geom_point() +
+  geom_vline(xintercept = -log(bonferoni_signif_treshhold), color="red", linetype="dashed") +
+  scale_color_manual(values = slope_sign_color) +
+  scale_alpha_manual(values = alpha_values) +
+  scale_shape_manual(values = shape_values) +
+  theme_classic() +
+  theme(axis.text=element_text(size=12),
+        axis.title=element_text(size=14)) +
+  theme(axis.text=element_text(size=16),
+        axis.title=element_text(size=18),
+        plot.subtitle=element_text(size=16)) +
+  theme(legend.position="none")
+
+
+
+
+
+
 #### GOST - Non visual -- Danio -------
 
 
