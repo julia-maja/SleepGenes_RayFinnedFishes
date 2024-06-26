@@ -48,8 +48,9 @@ Script to clean RNA-seq data  mapping : [RNA_seq_mapping.sh](RNA_seq_mapping.sh)
 
 ## V - All data analysis
 
-All the analysis presented in the study can be replicated using the different Rscripts provided in this guthub repository. 
+All the analysis presented in the study can be replicated using the different Rscripts provided in this github repository. 
 All the file needed to run the scripts are available on FigShare, in folders with the same name as the script.
+FigShare link: https://figshare.com/s/0984a80fe772e48617ed
 
 For example, to run the script fish_ospins_ASTRAL.R, you will need the file contained in the folder fish_ospins_ASTRAL in the FigShare repository mentionned above.
 
