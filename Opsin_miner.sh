@@ -9,15 +9,16 @@ conda activate olfactory
 LMOD_DISABLE_SAME_NAME_AUTOSWAP=no
 
 module purge
-module load R/4.2.0-foss-2021a
-module load BLAST/2.12.0-Linux_x86_64
-module load EMBOSS/6.2.0-goolf-1.7.20
-module load SAMtools/1.15-GCC-10.3.0
-module load MAFFT/7.467-GCCcore-7.3.0-with-extensions
-module load IQ-TREE/2.0-rc1-foss-2018b
-module load Python/3.9.5-GCCcore-10.3.0
-module load FASTX-Toolkit/0.0.14-goolf-1.7.20
-
+module load StdEnv/2020
+module load gcc/9.3.0
+module load r/4.2.1
+module load blast+/2.12.0
+module load emboss/6.6.0
+module load samtools/1.15.1
+module load mafft/7.471
+module load iq-tree/2.0.7
+module load python/3.9.6
+module load fastx-toolkit/0.0.14
 
 dt=$(date '+%d/%m/%Y %H:%M:%S');
 echo "$dt"
@@ -50,7 +51,7 @@ Rscript $scripts_location/Merge_blast_hits.R
 xargs samtools faidx $genome < Blast_nonoverlapping.tsv > Blast_nonoverlapping.fasta
 
 #Retain only besthit that best match to an opsin gene
-blastx -query Blast_nonoverlapping.fasta -db /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/GPCR_plus_Olfactory_plus_Taste_receptors_vertebrates_reformat.prot -max_target_seqs 1 -outfmt '6 qseqid sseqid' -out blastx_blast_regions.tsv -num_threads $number_of_thread
+blastx -query Blast_nonoverlapping.fasta -db Database/GPCR_plus_Olfactory_plus_Taste_receptors_vertebrates_reformat.prot -max_target_seqs 1 -outfmt '6 qseqid sseqid' -out blastx_blast_regions.tsv -num_threads $number_of_thread
 grep "Opsin-" blastx_blast_regions.tsv | cut -f1 | sort | uniq > Opsins_best_hits.txt
 for i in `cat Opsins_best_hits.txt` ; do grep "$i" Blast_nonoverlapping.tsv >> Opsins_Regions.tsv ; done
 
@@ -63,7 +64,7 @@ Rscript $scripts_location/Merge_blast_hits_extend.R $maximum_intron_length
 #Split the opsin database and launch exonerate with these sequences against potential opsin regions (max intron length : 30000bp)
 
 mkdir Splitted_db
-$scripts_location/exonerate-2.2.0-x86_64/bin/fastasplit -f /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot -c 30 --output Splitted_db
+$scripts_location/exonerate-2.2.0-x86_64/bin/fastasplit -f Database/all_opsins.prot -c 30 --output Splitted_db
 
 
 
@@ -106,12 +107,12 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 
 	xargs samtools faidx $genome < Potential_Opsins_regions.tsv > Potential_Opsins_regions.fa
 
-	blastx -query Potential_Opsins_regions.fa -db /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot -max_target_seqs 5 -outfmt '6 qseqid sseqid' -out blastx_per_scaffold.tsv -num_threads $number_of_thread
+	blastx -query Potential_Opsins_regions.fa -db Database/all_opsins.prot -max_target_seqs 5 -outfmt '6 qseqid sseqid' -out blastx_per_scaffold.tsv -num_threads $number_of_thread
 	grep ">" Potential_Opsins_regions.fa | sed 's/>//g' > scaffold_id.txt
 	
 	rm -r Gene_to_exo_per_scaff ; mkdir Gene_to_exo_per_scaff
 	for i in `cat scaffold_id.txt` ; do grep "$i" blastx_per_scaffold.tsv | cut -f2 | sed 's/-.*//g' | sort | uniq > Gene_to_exo_per_scaff/$i.target ; done
-	for file in Gene_to_exo_per_scaff/* ; do for gene in `cat $file` ; do cat /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/Final_dataset/$gene.prot >> $file.prot ; done ; done
+	for file in Gene_to_exo_per_scaff/* ; do for gene in `cat $file` ; do cat Database/Final_dataset/$gene.prot >> $file.prot ; done ; done
 	
 	
 	for file in Gene_to_exo_per_scaff/*.target ; do scaffold_name=`echo "$file" | sed 's/.target//g' | sed 's/Gene_to_exo_per_scaff\///g'` ; samtools faidx $genome $scaffold_name > Gene_to_exo_per_scaff/$scaffold_name.fasta  ; done
@@ -124,8 +125,8 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 	for i in Gene_to_exo_per_scaff/*.fasta ; do
 		file_name=`echo $i | sed 's/Gene_to_exo_per_scaff\///g' | sed 's/.fasta//g'`
 		prot_to_exo=`echo $file_name.target.prot`
-		sbatch --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.exo.rslt ; sleep 10" &
-		sbatch --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.noexhaustive.exo.rslt ; sleep 10" &
+		sbatch --account=def-mshafer --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.exo.rslt ; sleep 10" &
+		sbatch --account=def-mshafer --job-name=ops_vs_scaff -W -c 2 --qos=6hours --mem=4G --wrap="$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo '%tcs' Gene_to_exo_per_scaff/$prot_to_exo $i > Exonerate_raw_results_folder/$file_name.noexhaustive.exo.rslt ; sleep 10" &
 	done
 
 
@@ -179,7 +180,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 	perl $scripts_location/rename_fasta.pl renaming_file List_exonerate_cds_renamed.fasta > List_exonerate_cds.fasta
 
 	#Perform the blastp
-	blastx -query List_exonerate_cds.fasta -db /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot -outfmt '6 qseqid sseqid evalue' -out all_blastp.txt -max_target_seqs 1 -num_threads $number_of_thread
+	blastx -query List_exonerate_cds.fasta -db Database/all_opsins.prot -outfmt '6 qseqid sseqid evalue' -out all_blastp.txt -max_target_seqs 1 -num_threads $number_of_thread
 	
 	#Extract the information
 	[ -e all_blastp_parsed.txt ] && rm all_blastp_parsed.txt
@@ -220,7 +221,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 		mkdir Genes_predictions
 		
 
-		#for line in `cat Correct_coordinates_for_exonerate.tsv` ; do scaffold_s_e=`echo "$line" | cut -f1` ; best_query=`echo "$line" | cut -f2` ; scaffold_s_e_n=`echo "$line" | cut -f1 | sed 's/:/-/g'` ; samtools faidx $genome $scaffold_s_e > scaffold.fa ; sed -i 's/:/-/g' scaffold.fa ; samtools faidx /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot $best_query > query.prot ; $scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate ; cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta ; if [ `grep -c "Query: " Genes_predictions/$scaffold_s_e_n.exonerate` -ge 2 ] ; then sed '/^C4 Alignment:/,/^# --- END OF GFF DUMP ---/!d;/^# --- END OF GFF DUMP ---/q'  Genes_predictions/$scaffold_s_e_n.exonerate > first_result_infos ; sed '/^# --- END OF GFF DUMP ---/,/^C4 Alignment:/!d;/^C4 Alignment:/q'  Genes_predictions/$scaffold_s_e_n.exonerate > first_result_sequence ; cat first_result_infos first_result_sequence > Genes_predictions/$scaffold_s_e_n.exonerate ; fi ; done
+		#for line in `cat Correct_coordinates_for_exonerate.tsv` ; do scaffold_s_e=`echo "$line" | cut -f1` ; best_query=`echo "$line" | cut -f2` ; scaffold_s_e_n=`echo "$line" | cut -f1 | sed 's/:/-/g'` ; samtools faidx $genome $scaffold_s_e > scaffold.fa ; sed -i 's/:/-/g' scaffold.fa ; samtools faidx Database/all_opsins.prot $best_query > query.prot ; $scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate ; cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta ; if [ `grep -c "Query: " Genes_predictions/$scaffold_s_e_n.exonerate` -ge 2 ] ; then sed '/^C4 Alignment:/,/^# --- END OF GFF DUMP ---/!d;/^# --- END OF GFF DUMP ---/q'  Genes_predictions/$scaffold_s_e_n.exonerate > first_result_infos ; sed '/^# --- END OF GFF DUMP ---/,/^C4 Alignment:/!d;/^C4 Alignment:/q'  Genes_predictions/$scaffold_s_e_n.exonerate > first_result_sequence ; cat first_result_infos first_result_sequence > Genes_predictions/$scaffold_s_e_n.exonerate ; fi ; done
 		
 		for line in `cat Correct_coordinates_for_exonerate.tsv` ; do 
 			
@@ -232,7 +233,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 			samtools faidx $genome $scaffold_s_e > scaffold.fa
 			sed -i 's/:/-/g' scaffold.fa
 		
-			samtools faidx /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot $best_query > query.prot
+			samtools faidx Database/all_opsins.prot $best_query > query.prot
 		
 			$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate
 			cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta
@@ -322,7 +323,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 					cat Extend_five_prime.txt predicted_cds_rev.txt Extend_three_prime.txt > Complete_extanded_sequence.fa
 					sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 					query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-					query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 					perc80_query_length=$((query_length*80/100*3))
 					getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3
 					if grep -q -i "reverse" Filtered_predictions/$file_name_reduced.ORF ; then sequence_to_grep=`grep -i "reverse" Filtered_predictions/$file_name_reduced.ORF | sed 's/>//g' | sed 's/ .*//g'`  ; samtools faidx Filtered_predictions/$file_name_reduced.ORF $sequence_to_grep > temporary ; mv temporary Filtered_predictions/$file_name_reduced.ORF ; rm Filtered_predictions/$file_name_reduced.ORF.fai ; else rm Filtered_predictions/$file_name_reduced.ORF ; echo "bad strand" > Filtered_predictions/$file_name_reduced.ORF ; fi
@@ -377,7 +378,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 				
 						#Estimate the interval on which we wil search stop codons. 
 						query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-						query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+						query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 						query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 						five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 				
@@ -509,7 +510,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 					cat Extend_three_prime.txt predicted_cds.txt Extend_five_prime.txt > Complete_extanded_sequence.fa
 					sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 					query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-					query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 					perc80_query_length=$((query_length*80/100*3))
 					getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3 -reverse FALSE
 				
@@ -561,7 +562,7 @@ while [ "$current_nb_sequences" -gt "$previous_iteration_nb_sequences" ] && [ "$
 				
 						#Estimate the interval on which we wil search stop codons. 
 						query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-						query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+						query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 						query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 						five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 				
@@ -769,7 +770,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 		samtools faidx $genome $scaffold_s_e > scaffold.fa
 		sed -i 's/:/-/g' scaffold.fa
 	
-		samtools faidx /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot $best_query > query.prot
+		samtools faidx Database/all_opsins.prot $best_query > query.prot
 	
 		$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate
 		cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta
@@ -860,7 +861,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_five_prime.txt predicted_cds_rev.txt Extend_three_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3
 				if grep -q -i "reverse" Filtered_predictions/$file_name_reduced.ORF ; then sequence_to_grep=`grep -i "reverse" Filtered_predictions/$file_name_reduced.ORF | sed 's/>//g' | sed 's/ .*//g'`  ; samtools faidx Filtered_predictions/$file_name_reduced.ORF $sequence_to_grep > temporary ; mv temporary Filtered_predictions/$file_name_reduced.ORF ; rm Filtered_predictions/$file_name_reduced.ORF.fai ; else rm Filtered_predictions/$file_name_reduced.ORF ; echo "bad strand" > Filtered_predictions/$file_name_reduced.ORF ; fi
@@ -908,7 +909,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -1030,7 +1031,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_three_prime.txt predicted_cds.txt Extend_five_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3 -reverse FALSE
 			
@@ -1075,7 +1076,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -1251,7 +1252,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 		samtools faidx $genome $scaffold_s_e > scaffold.fa
 		sed -i 's/:/-/g' scaffold.fa
 	
-		samtools faidx /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot $best_query > query.prot
+		samtools faidx Database/all_opsins.prot $best_query > query.prot
 	
 		$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate
 		cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta
@@ -1341,7 +1342,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_five_prime.txt predicted_cds_rev.txt Extend_three_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3
 				if grep -q -i "reverse" Filtered_predictions/$file_name_reduced.ORF ; then sequence_to_grep=`grep -i "reverse" Filtered_predictions/$file_name_reduced.ORF | sed 's/>//g' | sed 's/ .*//g'`  ; samtools faidx Filtered_predictions/$file_name_reduced.ORF $sequence_to_grep > temporary ; mv temporary Filtered_predictions/$file_name_reduced.ORF ; rm Filtered_predictions/$file_name_reduced.ORF.fai ; else rm Filtered_predictions/$file_name_reduced.ORF ; echo "bad strand" > Filtered_predictions/$file_name_reduced.ORF ; fi
@@ -1380,7 +1381,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -1493,7 +1494,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_three_prime.txt predicted_cds.txt Extend_five_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3 -reverse FALSE
 			
@@ -1529,7 +1530,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -1698,7 +1699,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 		samtools faidx $genome $scaffold_s_e > scaffold.fa
 		sed -i 's/:/-/g' scaffold.fa
 	
-		samtools faidx /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot $best_query > query.prot
+		samtools faidx Database/all_opsins.prot $best_query > query.prot
 	
 		$scripts_location/exonerate-2.2.0-x86_64/bin/exonerate -E True --showtargetgff TRUE --model protein2genome --minintron 50 --maxintron $maximum_intron_length --ryo "%tcs" --bestn 1 query.prot scaffold.fa > Genes_predictions/$scaffold_s_e_n.exonerate
 		cp scaffold.fa Genes_predictions/$scaffold_s_e_n.fasta
@@ -1790,7 +1791,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_five_prime.txt predicted_cds_rev.txt Extend_three_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3
 				if grep -q -i "reverse" Filtered_predictions/$file_name_reduced.ORF ; then sequence_to_grep=`grep -i "reverse" Filtered_predictions/$file_name_reduced.ORF | sed 's/>//g' | sed 's/ .*//g'`  ; samtools faidx Filtered_predictions/$file_name_reduced.ORF $sequence_to_grep > temporary ; mv temporary Filtered_predictions/$file_name_reduced.ORF ; rm Filtered_predictions/$file_name_reduced.ORF.fai ; else rm Filtered_predictions/$file_name_reduced.ORF ; echo "bad strand" > Filtered_predictions/$file_name_reduced.ORF ; fi
@@ -1829,7 +1830,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -1941,7 +1942,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 				cat Extend_three_prime.txt predicted_cds.txt Extend_five_prime.txt > Complete_extanded_sequence.fa
 				sed -i '1 i\>Complete_seq' Complete_extanded_sequence.fa
 				query_name_exo=`grep -m1 "Query:" $file | sed 's/.*Query: //g'`
-				query_length=`grep "$query_name_exo" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+				query_length=`grep "$query_name_exo" Database/all_opsins.prot.fai | cut -f2`
 				perc80_query_length=$((query_length*80/100*3))
 				getorf -sequence Complete_extanded_sequence.fa -outseq Filtered_predictions/$file_name_reduced.ORF -minsize $perc80_query_length -find 3 -reverse FALSE
 			
@@ -1978,7 +1979,7 @@ if [ "$nb_row_parsed_exonerate" -gt "0" ] ; then
 			
 					#Estimate the interval on which we wil search stop codons. 
 					query_name=`grep "Query: " $file | sed 's/.*Query: //g'`
-					query_total_length=`grep -m1 "$query_name" /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot.fai | cut -f2`
+					query_total_length=`grep -m1 "$query_name" Database/all_opsins.prot.fai | cut -f2`
 					query_start_position=`grep "Query range: " $file | sed 's/^ *//g' | sed 's/Query range://g' | sed 's/ //g' | sed 's/->/ /g' | cut -f1 -d " "`
 					five_percent_position=$((query_total_length * 95 / 100 - query_start_position))
 			
@@ -2125,8 +2126,8 @@ grep ">" Pseudogenes_multiple_exon.fa | sed 's/>//g' > Unverified_pseudo_id.txt
 fasta_formatter -i Pseudogenes_multiple_exon.fa  > Pseudogenes_multiple_exon_reformat.fa 
 
 transeq Potential_multiple_exon_CDS.fa Potential_multiple_exon_CDS.prot ; sed -i 's/_1//g' Potential_multiple_exon_CDS.prot
-blastp -query Potential_multiple_exon_CDS.prot -db /scicore/home/salzburg/polica0000/Uniprot_db/uniprot_sprot.fasta -outfmt "6 qseqid sseqid stitle" -num_threads $number_of_thread -max_target_seqs 1 -out Complete_vs_Uniprot.blastp
-blastx -query Pseudogenes_multiple_exon_reformat.fa -db /scicore/home/salzburg/polica0000/Uniprot_db/uniprot_sprot.fasta -outfmt "6 qseqid sseqid stitle" -num_threads $number_of_thread -max_target_seqs 1 -out Incomplete_vs_Uniprot.blastp
+blastp -query Potential_multiple_exon_CDS.prot -db uniprot_sprot.fasta -outfmt "6 qseqid sseqid stitle" -num_threads $number_of_thread -max_target_seqs 1 -out Complete_vs_Uniprot.blastp
+blastx -query Pseudogenes_multiple_exon_reformat.fa -db uniprot_sprot.fasta -outfmt "6 qseqid sseqid stitle" -num_threads $number_of_thread -max_target_seqs 1 -out Incomplete_vs_Uniprot.blastp
 
 grep -i "RGR_\|RPE-retinal\|opsin" Complete_vs_Uniprot.blastp | cut -f1 | sort | uniq > good_complete_seq
 grep -i "RGR_\|RPE-retinal\|opsin" Incomplete_vs_Uniprot.blastp | cut -f1 | sort | uniq > good_incomplete_seq
@@ -2138,8 +2139,8 @@ xargs samtools faidx Pseudogenes_multiple_exon_reformat.fa < good_incomplete_seq
 #Now lets do a rough classification of our genes using a blast
 
 transeq Functionnal_Opsins_genes.fa Functionnal_Opsins_genes.prot ; sed -i 's/_1$//g' Functionnal_Opsins_genes.prot 
-blastp -query Functionnal_Opsins_genes.prot -db /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot -outfmt "6 qseqid sseqid" -num_threads $number_of_thread -max_target_seqs 1 -out Complete_vs_Opsins.blastp
-blastx -query Pseudogenes_Opsins_genes.fa -db /scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/all_opsins.prot -outfmt "6 qseqid sseqid" -num_threads $number_of_thread -max_target_seqs 1 -out Incomplete_vs_Opsins.blastp
+blastp -query Functionnal_Opsins_genes.prot -db Database/all_opsins.prot -outfmt "6 qseqid sseqid" -num_threads $number_of_thread -max_target_seqs 1 -out Complete_vs_Opsins.blastp
+blastx -query Pseudogenes_Opsins_genes.fa -db Database/all_opsins.prot -outfmt "6 qseqid sseqid" -num_threads $number_of_thread -max_target_seqs 1 -out Incomplete_vs_Opsins.blastp
 
 grep ">" Functionnal_Opsins_genes.fa | sed 's/>//g' | sort | uniq > uniq_id
 for i in `cat uniq_id` ; do
