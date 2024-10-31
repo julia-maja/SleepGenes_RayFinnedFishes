@@ -1,3 +1,4 @@
+.libPaths("/home/majaj/projects/def-mshafer/SleepGenes_RayFinnedFishes/R_libs")
 #load packages
 
 library(data.table)
@@ -10,7 +11,7 @@ library(stringr)
 
 #Load opsin database lengths
 
-query_length <- read.table("/scicore/home/salzburg/polica0000/Non_visual_opsins_Project/Database/query_length.tsv", header=FALSE, sep="\t")
+query_length <- read.table("Database/query_length.tsv", header=FALSE, sep="\t")
 colnames(query_length) <- c("query", "total_q_length")
 
 #Load exonerate results
