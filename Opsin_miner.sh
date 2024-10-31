@@ -8,6 +8,7 @@
 
 LMOD_DISABLE_SAME_NAME_AUTOSWAP=no
 
+module purge
 module load StdEnv/2020
 module load gcc/9.3.0
 module load r/4.2.1
