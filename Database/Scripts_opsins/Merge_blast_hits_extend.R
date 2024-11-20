@@ -1,4 +1,3 @@
-.libPaths("/home/majaj/projects/def-mshafer/SleepGenes_RayFinnedFishes/R_libs")
 #load packages
 library(data.table)
 library(dplyr)

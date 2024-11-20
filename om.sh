@@ -13,4 +13,4 @@
 # Load necessary modules
 
 # Run your command herei
-	 ./Opsin_miner.sh GCF_000002035.6_GRCz11_genomic.fna one_opsin.prot uniprot_10.fasta Database/Scripts_opsins/ 50000 4
+	 ./Opsin_miner.sh GCF_000002035.6_GRCz11_genomic.fna one_opsin.prot uniprot_10.fasta Database/Scripts_opsins/ 50000 4 &> om.txt
