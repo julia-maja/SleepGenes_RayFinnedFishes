@@ -5,7 +5,8 @@
 
 #eval "$(conda shell.bash hook)"
 #conda activate olfactory
-
+export PS4='+ ${LINENO}: '
+set -x
 LMOD_DISABLE_SAME_NAME_AUTOSWAP=no
 
 module purge
